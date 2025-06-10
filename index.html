@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>김수아 ♥ 조연우 모바일 청첩장</title>
 
-  <!-- 고운바탕 웹폰트 -->
-  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap" rel="stylesheet">
+  <!-- 고운바탕 폰트 -->
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap" rel="stylesheet" />
 
   <style>
     * {
@@ -26,6 +26,7 @@
       margin: auto;
     }
 
+    /* 히어로 */
     .hero {
       background: url('https://via.placeholder.com/800x1200.png?text=김수아+♥+조연우') no-repeat center center;
       background-size: cover;
@@ -56,6 +57,7 @@
       font-size: 1.1rem;
     }
 
+    /* 슬라이드 갤러리 */
     .gallery-slider-container {
       position: relative;
       overflow: hidden;
@@ -105,6 +107,41 @@
       right: 4px;
     }
 
+    /* 모달 */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 99;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    }
+
+    .modal.show {
+      display: flex;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 36px;
+      color: white;
+      cursor: pointer;
+    }
+
+    /* 지도 */
     .map iframe {
       width: 100%;
       height: 300px;
@@ -112,6 +149,7 @@
       border-radius: 12px;
     }
 
+    /* 계좌 */
     .account-box {
       background: #f9f9f9;
       padding: 16px;
@@ -148,56 +186,24 @@
       font-size: 0.9rem;
       color: #aaa;
     }
-
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 99;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.8);
-      justify-content: center;
-      align-items: center;
-    }
-
-    .modal-content {
-      max-width: 90%;
-      max-height: 80%;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.4);
-    }
-
-    .modal.show {
-      display: flex;
-    }
-
-    .close {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      font-size: 36px;
-      color: white;
-      cursor: pointer;
-    }
   </style>
 </head>
-<body>
 
+<body>
   <div class="hero">
     <h1>김수아 ♥ 조연우</h1>
-    <p>2025년 10월 5일 (일) 오후 1시<br />서울 더채플앳청담</p>
+    <p>2025년 10월 5일 (일) 오후 1시<br />더시그너스웨딩</p>
   </div>
 
   <section class="greeting">
     <p>
-      서로가 마주보며 다짐한 사랑을<br/>
-      이제 함께 한 방향을 바라보며 걸어가려 합니다.<br/><br/>
+      서로가 마주보며 다짐한 사랑을<br />
+      이제 함께 한 방향을 바라보며 걸어가려 합니다.<br /><br />
       따뜻한 마음으로 저희의 시작을 축복해 주세요.
     </p>
   </section>
 
+  <!-- 슬라이드 갤러리 -->
   <section class="gallery">
     <h3 style="text-align: center;">📸 우리의 순간</h3>
     <div class="gallery-slider-container">
@@ -212,16 +218,23 @@
     </div>
   </section>
 
+  <!-- 모달 -->
   <div id="imageModal" class="modal" onclick="closeModal()">
     <span class="close">&times;</span>
-    <img class="modal-content" id="modalImage">
+    <img class="modal-content" id="modalImage" />
   </div>
 
+  <!-- 지도 -->
   <section class="map">
     <h3 style="text-align:center;">📍 오시는 길</h3>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." loading="lazy"></iframe>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.0161891621275!2d126.88934707567467!3d35.15376996107073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35718b32ed4eaa4f%3A0x649df3b7c1fd22fc!2z642U7Yuw64yA7ZmU7J207Yq567OE7IucIOyEnOyGjO2PrOyduOumrO2YuCDsm5Drp4zshLHrj5kg7Jq07LKt7IKs7JmV7IOdIDM!5e0!3m2!1sko!2skr!4v1718019850060!5m2!1sko!2skr"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
   </section>
 
+  <!-- 계좌 -->
   <section class="account-box">
     <h3>💳 마음 전하실 곳</h3>
     <div class="account">
@@ -267,6 +280,5 @@
       document.getElementById("imageModal").classList.remove("show");
     }
   </script>
-
 </body>
 </html>
