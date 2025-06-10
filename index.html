@@ -56,10 +56,53 @@
       font-size: 1.1rem;
     }
 
-    .photo img {
-      width: 100%;
-      border-radius: 12px;
-      margin: 16px 0;
+    .gallery-slider-container {
+      position: relative;
+      overflow: hidden;
+      margin-top: 16px;
+    }
+
+    .gallery-slider {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      gap: 8px;
+      padding-bottom: 8px;
+    }
+
+    .gallery-slider img {
+      width: 70%;
+      max-width: 250px;
+      border-radius: 8px;
+      object-fit: cover;
+      flex-shrink: 0;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .gallery-slider img:hover {
+      transform: scale(1.03);
+    }
+
+    .slide-btn {
+      position: absolute;
+      top: 40%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.8);
+      border: none;
+      font-size: 1.5rem;
+      padding: 8px 12px;
+      cursor: pointer;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .slide-btn.left {
+      left: 4px;
+    }
+
+    .slide-btn.right {
+      right: 4px;
     }
 
     .map iframe {
@@ -105,6 +148,39 @@
       font-size: 0.9rem;
       color: #aaa;
     }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 99;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    }
+
+    .modal.show {
+      display: flex;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 36px;
+      color: white;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -122,10 +198,24 @@
     </p>
   </section>
 
-  <section class="photo">
-    <img src="https://via.placeholder.com/600x400.png?text=우리의+사진1" alt="사진1" />
-    <img src="https://via.placeholder.com/600x400.png?text=우리의+사진2" alt="사진2" />
+  <section class="gallery">
+    <h3 style="text-align: center;">📸 우리의 순간</h3>
+    <div class="gallery-slider-container">
+      <button class="slide-btn left" onclick="slideGallery(-1)">←</button>
+      <div class="gallery-slider" id="gallerySlider">
+        <img src="https://via.placeholder.com/300x300.png?text=Photo+1" alt="사진1" onclick="openModal(this.src)">
+        <img src="https://via.placeholder.com/300x300.png?text=Photo+2" alt="사진2" onclick="openModal(this.src)">
+        <img src="https://via.placeholder.com/300x300.png?text=Photo+3" alt="사진3" onclick="openModal(this.src)">
+        <img src="https://via.placeholder.com/300x300.png?text=Photo+4" alt="사진4" onclick="openModal(this.src)">
+      </div>
+      <button class="slide-btn right" onclick="slideGallery(1)">→</button>
+    </div>
   </section>
+
+  <div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
 
   <section class="map">
     <h3 style="text-align:center;">📍 오시는 길</h3>
@@ -155,6 +245,26 @@
       }).catch(err => {
         alert("복사 실패: " + err);
       });
+    }
+
+    function slideGallery(direction) {
+      const container = document.getElementById('gallerySlider');
+      const scrollAmount = container.offsetWidth * 0.7;
+      container.scrollBy({
+        left: direction * scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+
+    function openModal(src) {
+      const modal = document.getElementById("imageModal");
+      const modalImg = document.getElementById("modalImage");
+      modalImg.src = src;
+      modal.classList.add("show");
+    }
+
+    function closeModal() {
+      document.getElementById("imageModal").classList.remove("show");
     }
   </script>
 
