@@ -5,69 +5,79 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>김수아 ♥ 조연우 모바일 청첩장</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      padding: 0;
-      background-color: #ffffff;
       font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+      background-color: #fff;
       color: #333;
+    }
+
+    section {
+      padding: 48px 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('https://via.placeholder.com/800x1200.png?text=김수아+♥+조연우') no-repeat center center;
+      background-size: cover;
+      height: 100vh;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+      padding: 0 20px;
       text-align: center;
     }
 
-    .container {
-      max-width: 600px;
-      margin: auto;
-      padding: 24px;
+    .hero h1 {
+      font-size: 2.5rem;
+      margin: 0;
     }
 
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
+    .hero p {
+      font-size: 1.2rem;
+      margin-top: 10px;
     }
 
-    .names {
-      font-size: 1.4rem;
-      margin: 16px 0;
+    /* Greeting */
+    .greeting {
+      text-align: center;
+      line-height: 1.6;
+      font-size: 1.1rem;
     }
 
-    .date, .location {
-      font-size: 1rem;
-      margin: 4px 0;
-    }
-
+    /* Photo Section */
     .photo img {
       width: 100%;
       border-radius: 12px;
-      margin: 20px 0;
+      margin: 16px 0;
     }
 
-    .message {
-      font-size: 1rem;
-      line-height: 1.6;
-      margin-top: 24px;
-      white-space: pre-line;
-    }
-
-    .map {
-      margin-top: 24px;
-    }
-
+    /* Map Section */
     .map iframe {
       width: 100%;
       height: 300px;
       border: none;
-      border-radius: 8px;
-    }
-
-    .account-section {
-      margin-top: 32px;
-      text-align: left;
-      padding: 16px;
-      background: #f8f8f8;
       border-radius: 12px;
     }
 
-    .account-section h3 {
+    /* Account Section */
+    .account-box {
+      background: #f9f9f9;
+      padding: 16px;
+      border-radius: 12px;
+      margin: 12px 0;
+    }
+
+    .account-box h3 {
       margin-top: 0;
     }
 
@@ -75,75 +85,78 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      margin: 8px 0;
       background: #fff;
-      padding: 8px 12px;
       border: 1px solid #ddd;
       border-radius: 8px;
-      margin-bottom: 8px;
+      padding: 8px 12px;
     }
 
     .account button {
-      background-color: #ffd8dd;
+      background-color: #ffe2e8;
       border: none;
+      padding: 5px 10px;
       border-radius: 6px;
-      padding: 6px 10px;
       cursor: pointer;
     }
 
+    /* Footer */
     .footer {
-      margin-top: 40px;
-      font-size: 0.85rem;
-      color: #888;
+      text-align: center;
+      padding: 24px;
+      font-size: 0.9rem;
+      color: #aaa;
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <h1>💐 결혼합니다 💐</h1>
-    <div class="names">김수아 ♥ 조연우</div>
-
-    <div class="date">2025년 10월 5일 (일) 오후 1시</div>
-    <div class="location">서울 더채플앳청담</div>
-
-    <div class="photo">
-      <img src="https://via.placeholder.com/600x400.png?text=신랑+신부+사진" alt="신랑 신부 사진" />
-    </div>
-
-    <div class="message">
-      서로가 마주보며 다짐한 사랑을
-      이제 함께 한 방향을 바라보며 걸어가려 합니다.
-
-      따뜻한 마음으로 저희의 시작을 축복해 주세요.
-    </div>
-
-    <div class="map">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.918115729173!2d127.03403811514223!3d37.52585077980254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca3e84c8adfbd%3A0x3f8b4d6c4b3f5e7c!2z7ISc7Jq47Yq567OE7IucIOyEnOyGjO2PrOuvuOq1rCDsnbjsgrDrnbzrr7jroZwg6rSR7KO87YSw7JWE7J2067KI!5e0!3m2!1sko!2skr!4v1718000000000"
-        allowfullscreen=""
-        loading="lazy"
-      ></iframe>
-    </div>
-
-    <div class="account-section">
-      <h3>💳 마음 전하실 곳</h3>
-
-      <div class="account">
-        <span>신랑: 우리은행 1002-123-456789</span>
-        <button onclick="copyToClipboard('1002-123-456789')">복사</button>
-      </div>
-
-      <div class="account">
-        <span>신부: 국민은행 123456-78-901234</span>
-        <button onclick="copyToClipboard('123456-78-901234')">복사</button>
-      </div>
-    </div>
-
-    <div class="footer">
-      © 2025 김수아 ♥ 조연우 Wedding Invitation
-    </div>
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>김수아 ♥ 조연우</h1>
+    <p>2025년 10월 5일 (일) 오후 1시<br />서울 더채플앳청담</p>
   </div>
 
+  <!-- 인사말 -->
+  <section class="greeting">
+    <p>
+      서로가 마주보며 다짐한 사랑을<br/>
+      이제 함께 한 방향을 바라보며 걸어가려 합니다.<br/><br/>
+      따뜻한 마음으로 저희의 시작을 축복해 주세요.
+    </p>
+  </section>
+
+  <!-- 사진 섹션 -->
+  <section class="photo">
+    <img src="https://via.placeholder.com/600x400.png?text=우리의+사진1" alt="사진1" />
+    <img src="https://via.placeholder.com/600x400.png?text=우리의+사진2" alt="사진2" />
+  </section>
+
+  <!-- 지도 섹션 -->
+  <section class="map">
+    <h3 style="text-align:center;">📍 오시는 길</h3>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." loading="lazy"></iframe>
+  </section>
+
+  <!-- 계좌 정보 -->
+  <section class="account-box">
+    <h3>💳 마음 전하실 곳</h3>
+    <div class="account">
+      <span>신랑: 우리 1002-123-456789</span>
+      <button onclick="copyToClipboard('1002-123-456789')">복사</button>
+    </div>
+    <div class="account">
+      <span>신부: 국민 123456-78-901234</span>
+      <button onclick="copyToClipboard('123456-78-901234')">복사</button>
+    </div>
+  </section>
+
+  <!-- 푸터 -->
+  <div class="footer">
+    © 2025 김수아 ♥ 조연우 Wedding Invitation
+  </div>
+
+  <!-- 복사 기능 -->
   <script>
     function copyToClipboard(text) {
       navigator.clipboard.writeText(text).then(() => {
@@ -153,6 +166,6 @@
       });
     }
   </script>
- 
+
 </body>
 </html>
