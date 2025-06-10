@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>수아의 웨딩 페이지</title>
+
+  <!-- ✅ 스타일 -->
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -20,21 +22,42 @@
       font-size: 1.2rem;
       color: #333;
     }
-    @media (min-width: 768px) {
-      body {
-        padding: 80px;
-      }
-      h1 {
-        font-size: 3rem;
-      }
-      p {
-        font-size: 1.5rem;
-      }
+    button {
+      margin-top: 30px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: #ffcad4;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    #message {
+      margin-top: 20px;
+      color: #b35c5c;
+      font-weight: bold;
     }
   </style>
+
+  <!-- ✅ jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body>
+
   <h1>💐 초대합니다 💐</h1>
   <p>저희 결혼합니다!</p>
+
+  <!-- ✅ 버튼 + 메세지 -->
+  <button id="btnLove">누르면 축하 메시지가 나와요</button>
+  <div id="message"></div>
+
+  <!-- ✅ JS 코드 -->
+  <script>
+    $(document).ready(function() {
+      $('#btnLove').click(function() {
+        $('#message').hide().text('💖 축하해주셔서 감사합니다! 💖').fadeIn(500);
+      });
+    });
+  </script>
+
 </body>
 </html>
