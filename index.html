@@ -2,14 +2,14 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>김수아 ❤ 조연우 결혼합니다</title>
   <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Nanum Myeongjo', serif;
-      background: #fffaf8;
+      background: linear-gradient(#fffaf8, #fdf6f3);
       color: #333;
       text-align: center;
     }
@@ -28,18 +28,18 @@
       width: 90%;
       margin: 1rem 0;
       border-radius: 1rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
-    .account-box, .calendar-box {
+    .account-box, .calendar-box, .rsvp-box, .map-box {
       background: #fff;
       border-radius: 1rem;
       padding: 1.5rem;
       margin: 2rem auto;
       width: 90%;
       max-width: 500px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
     }
-    .account-box h3, .calendar-box h3 {
+    .account-box h3, .calendar-box h3, .rsvp-box h3, .map-box h3 {
       margin-bottom: 1rem;
       font-size: 1.2rem;
       border-bottom: 1px solid #ccc;
@@ -51,14 +51,49 @@
     .calendar-box p {
       font-size: 1.1rem;
     }
+    .btn {
+      background: #f9e4e0;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 1rem;
+      margin: 1rem 0.3rem;
+      cursor: pointer;
+    }
     footer {
       font-size: 0.8rem;
       color: #aaa;
       margin: 3rem 0 1rem;
     }
+    .falling-petals {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .petal {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      border-radius: 50%;
+      opacity: 0.6;
+      animation: fall linear infinite;
+    }
+    @keyframes fall {
+      0% { transform: translateY(-100px) rotate(0deg); }
+      100% { transform: translateY(100vh) rotate(360deg); }
+    }
   </style>
 </head>
 <body>
+  <audio id="bgm" loop>
+    <source src="bgm.mp3" type="audio/mp3" />
+    브라우저가 오디오를 지원하지 않습니다.
+  </audio>
+  <button class="btn" onclick="document.getElementById('bgm').play()">🎵 음악 재생</button>
 
   <header>
     <h1>김수아 ❤ 조연우</h1>
@@ -67,39 +102,55 @@
   </header>
 
   <section class="image-box">
-    <img src="https://susujikim.github.io/sua_wedding/images/img1.jpeg" alt="커플사진1">
-    <img src="https://susujikim.github.io/sua_wedding/images/img2.jpeg" alt="커플사진2">
-    <img src="https://susujikim.github.io/sua_wedding/images/img3.jpeg" alt="커플사진3">
+    <img src="images/img1.jpeg" alt="커플사진1">
+    <img src="images/img2.jpeg" alt="커플사진2">
+    <img src="images/img3.jpeg" alt="커플사진3">
   </section>
 
   <section class="calendar-box">
     <h3>💍 결혼식 일정</h3>
     <p>2026년 2월 21일 토요일</p>
     <p>D-day까지 <strong><span id="dday"></span></strong>일</p>
+    <button class="btn" onclick="addToCalendar()">📅 캘린더에 저장</button>
   </section>
 
   <section class="account-box">
     <h3>🎁 마음 전하실 곳</h3>
     <div class="account-item">
-      👰 신부 김수아<br/>
-      국민은행 123456-78-901234
+      👰 신부 김수아<br />국민은행 123456-78-901234
     </div>
     <div class="account-item">
-      🤵 신랑 조연우<br/>
-      신한은행 987654-32-109876
+      🤵 신랑 조연우<br />신한은행 987654-32-109876
     </div>
+  </section>
+
+  <section class="map-box">
+    <h3>📍 오시는 길</h3>
+    <p>
+      <a class="btn" href="https://map.kakao.com/link/map/더시그너스웨딩,35.154198,126.882444" target="_blank">카카오맵으로 보기</a>
+      <a class="btn" href="https://naver.me/xDFG32YJ" target="_blank">네이버지도 보기</a>
+    </p>
+  </section>
+
+  <section class="rsvp-box">
+    <h3>📩 참석 여부 알려주세요</h3>
+    <p>
+      <a class="btn" href="https://forms.gle/yourRSVPFormURL" target="_blank">RSVP 폼 작성하기</a>
+    </p>
   </section>
 
   <section class="image-box">
-    <img src="https://susujikim.github.io/sua_wedding/images/img4.jpeg" alt="사진4">
-    <img src="https://susujikim.github.io/sua_wedding/images/img5.jpeg" alt="사진5">
-    <img src="https://susujikim.github.io/sua_wedding/images/img6.jpeg" alt="사진6">
-    <img src="https://susujikim.github.io/sua_wedding/images/img7.jpeg" alt="사진7">
+    <img src="images/img4.jpeg" alt="사진4">
+    <img src="images/img5.jpeg" alt="사진5">
+    <img src="images/img6.jpeg" alt="사진6">
+    <img src="images/img7.jpeg" alt="사진7">
   </section>
 
   <footer>
-    ver 1.0.0
+    ver 1.1.0
   </footer>
+
+  <div class="falling-petals" id="petal-container"></div>
 
   <script>
     // D-day 계산
@@ -108,7 +159,29 @@
     const diffTime = weddingDate - today;
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     document.getElementById("dday").textContent = diffDays >= 0 ? `D-${diffDays}` : `+${Math.abs(diffDays)}`;
-  </script>
 
+    // 캘린더 저장 (ics 파일 다운로드)
+    function addToCalendar() {
+      const icsContent = `BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nSUMMARY:김수아 ❤ 조연우 결혼식\nDTSTART:20260221T040000Z\nDTEND:20260221T060000Z\nLOCATION:더시그너스웨딩 3층\nDESCRIPTION:모바일 청첩장\nEND:VEVENT\nEND:VCALENDAR`;
+      const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'wedding-invite.ics';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    // 꽃잎 효과
+    const petalContainer = document.getElementById("petal-container");
+    for (let i = 0; i < 20; i++) {
+      const petal = document.createElement("div");
+      petal.className = "petal";
+      petal.style.left = `${Math.random() * 100}vw`;
+      petal.style.animationDuration = `${3 + Math.random() * 5}s`;
+      petal.style.animationDelay = `${Math.random() * 5}s`;
+      petalContainer.appendChild(petal);
+    }
+  </script>
 </body>
 </html>
