@@ -117,10 +117,14 @@
   <section class="account-box">
     <h3>🎁 마음 전하실 곳</h3>
     <div class="account-item">
-      👰 신부 김수아<br />국민은행 123456-78-901234
+      👰 신부 김수아<br />
+      국민은행 <span id="acc1">123456-78-901234</span>
+      <button class="btn" onclick="copyAccount('acc1')">복사</button>
     </div>
     <div class="account-item">
-      🤵 신랑 조연우<br />신한은행 987654-32-109876
+      🤵 신랑 조연우<br />
+      신한은행 <span id="acc2">987654-32-109876</span>
+      <button class="btn" onclick="copyAccount('acc2')">복사</button>
     </div>
   </section>
 
@@ -172,15 +176,13 @@
       document.body.removeChild(link);
     }
 
-    // 꽃잎 효과
-    const petalContainer = document.getElementById("petal-container");
-    for (let i = 0; i < 20; i++) {
-      const petal = document.createElement("div");
-      petal.className = "petal";
-      petal.style.left = `${Math.random() * 100}vw`;
-      petal.style.animationDuration = `${3 + Math.random() * 5}s`;
-      petal.style.animationDelay = `${Math.random() * 5}s`;
-      petalContainer.appendChild(petal);
+   
+    // 계좌 복사 기능
+    function copyAccount(id) {
+      const text = document.getElementById(id).textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        alert('계좌번호가 복사되었습니다!');
+      });
     }
   </script>
 </body>
