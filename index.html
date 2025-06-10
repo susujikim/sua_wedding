@@ -1,63 +1,103 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>수아의 웨딩 페이지</title>
-
-  <!-- ✅ 스타일 -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>김수아 ♥ 조연우 모바일 청첩장</title>
   <style>
     body {
-      font-family: 'Arial', sans-serif;
-      text-align: center;
-      padding: 40px 20px;
       margin: 0;
-      background-color: #fff8f0;
+      padding: 0;
+      background-color: #ffffff;
+      font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+      color: #333;
+      text-align: center;
     }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 24px;
+    }
+
     h1 {
       font-size: 2rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
     }
-    p {
-      font-size: 1.2rem;
-      color: #333;
+
+    .names {
+      font-size: 1.4rem;
+      margin: 16px 0;
     }
-    button {
-      margin-top: 30px;
-      padding: 10px 20px;
+
+    .date, .location {
       font-size: 1rem;
-      background-color: #ffcad4;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
+      margin: 4px 0;
     }
-    #message {
-      margin-top: 20px;
-      color: #b35c5c;
-      font-weight: bold;
+
+    .photo img {
+      width: 100%;
+      border-radius: 12px;
+      margin: 20px 0;
+    }
+
+    .message {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-top: 24px;
+      white-space: pre-line;
+    }
+
+    .map {
+      margin-top: 24px;
+    }
+
+    .map iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 8px;
+    }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 0.85rem;
+      color: #888;
     }
   </style>
-
-  <!-- ✅ jQuery CDN -->
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body>
 
-  <h1>💐 초대합니다 💐</h1>
-  <p>저희 결혼합니다!</p>
+  <div class="container">
+    <h1>💐 결혼합니다 💐</h1>
+    <div class="names">김수아 ♥ 조연우</div>
 
-  <!-- ✅ 버튼 + 메세지 -->
-  <button id="btnLove">누르면 축하 메시지가 나와요</button>
-  <div id="message"></div>
+    <div class="date">2025년 10월 5일 (일) 오후 1시</div>
+    <div class="location">서울 더채플앳청담</div>
 
-  <!-- ✅ JS 코드 -->
-  <script>
-    $(document).ready(function() {
-      $('#btnLove').click(function() {
-        $('#message').hide().text('💖 축하해주셔서 감사합니다! 💖').fadeIn(500);
-      });
-    });
-  </script>
+    <div class="photo">
+      <img src="https://via.placeholder.com/600x400.png?text=신랑+신부+사진" alt="신랑 신부 사진" />
+    </div>
+
+    <div class="message">
+      서로가 마주보며 다짐한 사랑을
+      이제 함께 한 방향을 바라보며 걸어가려 합니다.
+
+      따뜻한 마음으로 저희의 시작을 축복해 주세요.
+    </div>
+
+    <div class="map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.918115729173!2d127.03403811514223!3d37.52585077980254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca3e84c8adfbd%3A0x3f8b4d6c4b3f5e7c!2z7ISc7Jq47Yq567OE7IucIOyEnOyGjO2PrOuvuOq1rCDsnbjsgrDrnbzrr7jroZwg6rSR7KO87YSw7JWE7J2067KI!5e0!3m2!1sko!2skr!4v1718000000000"
+        allowfullscreen=""
+        loading="lazy"
+      ></iframe>
+    </div>
+
+    <div class="footer">
+      © 2025 김수아 ♥ 조연우 Wedding Invitation
+    </div>
+  </div>
 
 </body>
 </html>
