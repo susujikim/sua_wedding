@@ -4,14 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>김수아 ♥ 조연우 모바일 청첩장</title>
+
+  <!-- 어비 슬기체 웹폰트 적용 -->
+  <link href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2107@1.0/UhBeeSeulvely.woff2" rel="stylesheet">
   <style>
+    @font-face {
+      font-family: 'UhBee Seulvely';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2107@1.0/UhBeeSeulvely.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+    }
+
     * {
       box-sizing: border-box;
     }
 
     body {
       margin: 0;
-      font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+      font-family: 'UhBee Seulvely', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
       background-color: #fff;
       color: #333;
     }
@@ -22,7 +32,6 @@
       margin: auto;
     }
 
-    /* Hero Section */
     .hero {
       background: url('https://via.placeholder.com/800x1200.png?text=김수아+♥+조연우') no-repeat center center;
       background-size: cover;
@@ -47,21 +56,18 @@
       margin-top: 10px;
     }
 
-    /* Greeting */
     .greeting {
       text-align: center;
       line-height: 1.6;
       font-size: 1.1rem;
     }
 
-    /* Photo Section */
     .photo img {
       width: 100%;
       border-radius: 12px;
       margin: 16px 0;
     }
 
-    /* Map Section */
     .map iframe {
       width: 100%;
       height: 300px;
@@ -69,7 +75,6 @@
       border-radius: 12px;
     }
 
-    /* Account Section */
     .account-box {
       background: #f9f9f9;
       padding: 16px;
@@ -100,7 +105,6 @@
       cursor: pointer;
     }
 
-    /* Footer */
     .footer {
       text-align: center;
       padding: 24px;
@@ -111,13 +115,11 @@
 </head>
 <body>
 
-  <!-- Hero Section -->
   <div class="hero">
     <h1>김수아 ♥ 조연우</h1>
     <p>2025년 10월 5일 (일) 오후 1시<br />서울 더채플앳청담</p>
   </div>
 
-  <!-- 인사말 -->
   <section class="greeting">
     <p>
       서로가 마주보며 다짐한 사랑을<br/>
@@ -126,19 +128,16 @@
     </p>
   </section>
 
-  <!-- 사진 섹션 -->
   <section class="photo">
     <img src="https://via.placeholder.com/600x400.png?text=우리의+사진1" alt="사진1" />
     <img src="https://via.placeholder.com/600x400.png?text=우리의+사진2" alt="사진2" />
   </section>
 
-  <!-- 지도 섹션 -->
   <section class="map">
     <h3 style="text-align:center;">📍 오시는 길</h3>
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." loading="lazy"></iframe>
   </section>
 
-  <!-- 계좌 정보 -->
   <section class="account-box">
     <h3>💳 마음 전하실 곳</h3>
     <div class="account">
@@ -151,12 +150,10 @@
     </div>
   </section>
 
-  <!-- 푸터 -->
   <div class="footer">
     © 2025 김수아 ♥ 조연우 Wedding Invitation
   </div>
 
-  <!-- 복사 기능 -->
   <script>
     function copyToClipboard(text) {
       navigator.clipboard.writeText(text).then(() => {
