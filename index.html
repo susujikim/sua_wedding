@@ -2,284 +2,112 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>김수아 ♥ 조연우 모바일 청첩장</title>
-
-  <!-- 고운바탕 웹폰트 -->
-  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap" rel="stylesheet">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>김수아 ❤ 조연우 결혼합니다</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
-      font-family: 'Gowun Batang', serif;
-      background-color: #fff;
+      font-family: 'Nanum Myeongjo', serif;
+      background: #fffaf8;
       color: #333;
-    }
-
-    section {
-      padding: 48px 20px;
-      max-width: 600px;
-      margin: auto;
-    }
-
-    .hero {
-      background: url('https://via.placeholder.com/800x1200.png?text=김수아+♥+조연우') no-repeat center center;
-      background-size: cover;
-      height: 100vh;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-      padding: 0 20px;
       text-align: center;
     }
-
-    .hero h1 {
-      font-size: 2.5rem;
+    header {
+      background: #f9e4e0;
+      padding: 2rem 1rem;
+    }
+    header h1 {
       margin: 0;
+      font-size: 2rem;
     }
-
-    .hero p {
+    section {
+      padding: 2rem 1rem;
+    }
+    .image-box img {
+      width: 90%;
+      margin: 1rem 0;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .account-box, .calendar-box {
+      background: #fff;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin: 2rem auto;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .account-box h3, .calendar-box h3 {
+      margin-bottom: 1rem;
       font-size: 1.2rem;
-      margin-top: 10px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 0.5rem;
     }
-
-    .greeting {
-      text-align: center;
-      line-height: 1.6;
+    .account-item {
+      margin: 0.5rem 0;
+    }
+    .calendar-box p {
       font-size: 1.1rem;
     }
-
-    .gallery-slider-container {
-      position: relative;
-      overflow: hidden;
-      margin-top: 16px;
-    }
-
-    .gallery-slider {
-      display: flex;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      gap: 8px;
-      padding-bottom: 8px;
-    }
-
-    .gallery-slider img {
-      width: 70%;
-      max-width: 250px;
-      border-radius: 8px;
-      object-fit: cover;
-      flex-shrink: 0;
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
-
-    .gallery-slider img:hover {
-      transform: scale(1.03);
-    }
-
-    .slide-btn {
-      position: absolute;
-      top: 40%;
-      transform: translateY(-50%);
-      background: rgba(255,255,255,0.8);
-      border: none;
-      font-size: 1.5rem;
-      padding: 8px 12px;
-      cursor: pointer;
-      border-radius: 50%;
-      z-index: 1;
-    }
-
-    .slide-btn.left {
-      left: 4px;
-    }
-
-    .slide-btn.right {
-      right: 4px;
-    }
-
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 99;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.8);
-      justify-content: center;
-      align-items: center;
-    }
-
-    .modal-content {
-      max-width: 90%;
-      max-height: 80%;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.4);
-    }
-
-    .modal.show {
-      display: flex;
-    }
-
-    .close {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      font-size: 36px;
-      color: white;
-      cursor: pointer;
-    }
-
-    .map iframe {
-      width: 100%;
-      height: 300px;
-      border: none;
-      border-radius: 12px;
-    }
-
-    .account-box {
-      background: #f9f9f9;
-      padding: 16px;
-      border-radius: 12px;
-      margin: 12px 0;
-    }
-
-    .account-box h3 {
-      margin-top: 0;
-    }
-
-    .account {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin: 8px 0;
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 8px 12px;
-    }
-
-    .account button {
-      background-color: #ffe2e8;
-      border: none;
-      padding: 5px 10px;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    .footer {
-      text-align: center;
-      padding: 24px;
-      font-size: 0.9rem;
+    footer {
+      font-size: 0.8rem;
       color: #aaa;
-    }
-
-    .version-label {
-      text-align: center;
-      font-size: 0.7rem;
-      color: #bbb;
-      margin-top: -12px;
+      margin: 3rem 0 1rem;
     }
   </style>
 </head>
 <body>
 
-  <div class="hero">
-    <h1>김수아 ♥ 조연우</h1>
-    <p>2025년 10월 5일 (일) 오후 1시<br />더시그너스웨딩 (광주)</p>
-  </div>
+  <header>
+    <h1>김수아 ❤ 조연우</h1>
+    <p>2026년 2월 21일 토요일 오후 1시</p>
+    <p>더시그너스웨딩 3층</p>
+  </header>
 
-  <section class="greeting">
-    <p>
-      서로가 마주보며 다짐한 사랑을<br/>
-      이제 함께 한 방향을 바라보며 걸어가려 합니다.<br/><br/>
-      따뜻한 마음으로 저희의 시작을 축복해 주세요.
-    </p>
+  <section class="image-box">
+    <img src="images/img1.jpeg" alt="커플사진1">
+    <img src="images/img2.jpeg" alt="커플사진2">
+    <img src="images/img3.jpeg" alt="커플사진3">
   </section>
 
-  <section class="gallery">
-    <h3 style="text-align: center;">📸 우리의 순간</h3>
-    <div class="gallery-slider-container">
-      <button class="slide-btn left" onclick="slideGallery(-1)">←</button>
-      <div class="gallery-slider" id="gallerySlider">
-        <img src="/img1.jpeg" alt="사진1" onclick="openModal(this.src)">
-        <img src="/img2.jpeg" alt="사진2" onclick="openModal(this.src)">
-        <img src="/img3.jpeg" alt="사진3" onclick="openModal(this.src)">
-        <img src="/img4.jpeg" alt="사진4" onclick="openModal(this.src)">
-      </div>
-      <button class="slide-btn right" onclick="slideGallery(1)">→</button>
-    </div>
-  </section>
-
-  <div id="imageModal" class="modal" onclick="closeModal()">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="modalImage">
-  </div>
-
-  <section class="map">
-    <h3 style="text-align:center;">📍 오시는 길</h3>
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.0161891621275!2d126.88934707567467!3d35.15376996107073!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35718b32ed4eaa4f%3A0x649df3b7c1fd22fc!2z642U7Yuw64yA7ZmU7J207Yq567OE7IucIOyEnOyGjO2PrOyduOumrO2YuCDsm5Drp4zshLHrj5kg7Jq07LKt7IKs7JmV7IOdIDM!5e0!3m2!1sko!2skr!4v1718019850060!5m2!1sko!2skr"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
+  <section class="calendar-box">
+    <h3>💍 결혼식 일정</h3>
+    <p>2026년 2월 21일 토요일</p>
+    <p>D-day까지 <strong><span id="dday"></span></strong>일</p>
   </section>
 
   <section class="account-box">
-    <h3>💳 마음 전하실 곳</h3>
-    <div class="account">
-      <span>신랑: 우리 1002-123-456789</span>
-      <button onclick="copyToClipboard('1002-123-456789')">복사</button>
+    <h3>🎁 마음 전하실 곳</h3>
+    <div class="account-item">
+      👰 신부 김수아<br/>
+      국민은행 123456-78-901234
     </div>
-    <div class="account">
-      <span>신부: 국민 123456-78-901234</span>
-      <button onclick="copyToClipboard('123456-78-901234')">복사</button>
+    <div class="account-item">
+      🤵 신랑 조연우<br/>
+      신한은행 987654-32-109876
     </div>
   </section>
 
-  <div class="footer">
-    © 2025 김수아 ♥ 조연우 Wedding Invitation
-  </div>
+  <section class="image-box">
+    <img src="images/img4.jpeg" alt="사진4">
+    <img src="images/img5.jpeg" alt="사진5">
+    <img src="images/img6.jpeg" alt="사진6">
+    <img src="images/img7.jpeg" alt="사진7">
+  </section>
 
-  <div class="version-label">v1.0.1</div>
+  <footer>
+    ver 1.0.0
+  </footer>
 
   <script>
-    function copyToClipboard(text) {
-      navigator.clipboard.writeText(text).then(() => {
-        alert("계좌번호가 복사되었습니다.");
-      }).catch(err => {
-        alert("복사 실패: " + err);
-      });
-    }
-
-    function openModal(src) {
-      const modal = document.getElementById("imageModal");
-      const modalImg = document.getElementById("modalImage");
-      modalImg.src = src;
-      modal.classList.add("show");
-    }
-
-    function closeModal() {
-      document.getElementById("imageModal").classList.remove("show");
-    }
-
-    function slideGallery(direction) {
-      const container = document.getElementById('gallerySlider');
-      const scrollAmount = container.offsetWidth * 0.7;
-      container.scrollBy({
-        left: direction * scrollAmount,
-        behavior: 'smooth'
-      });
-    }
+    // D-day 계산
+    const weddingDate = new Date("2026-02-21T13:00:00+09:00");
+    const today = new Date();
+    const diffTime = weddingDate - today;
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    document.getElementById("dday").textContent = diffDays >= 0 ? `D-${diffDays}` : `+${Math.abs(diffDays)}`;
   </script>
 
 </body>
