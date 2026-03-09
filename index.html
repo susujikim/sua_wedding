@@ -199,6 +199,7 @@ border-radius:12px;
 width:85%;
 max-width:380px;
 text-align:center;
+margin:30px;
 }
 
 .acc-number{
@@ -206,7 +207,7 @@ font-weight:600;
 margin:8px 0 14px 0;
 }
 
-/* 복사 버튼 디자인 */
+/* 복사 버튼 */
 
 .copy-btn{
 display:inline-block;
@@ -225,12 +226,22 @@ color:white;
 border-color:#333;
 }
 
-.close-btn{
+/* 닫기 영역 */
+
+.popup-footer{
 margin-top:25px;
-background:#eee;
+padding-top:15px;
+border-top:1px solid #eee;
+text-align:center;
+}
+
+.close-btn{
+background:#333;
+color:white;
 border:none;
-padding:10px 20px;
-border-radius:20px;
+padding:12px 28px;
+border-radius:30px;
+font-size:14px;
 cursor:pointer;
 }
 
@@ -466,7 +477,9 @@ N26, N51, N62, N72
 <p class="acc-number">신한은행 444-555-666666</p>
 <button class="copy-btn" onclick="copy('444555666666')">계좌 복사</button>
 
+<div class="popup-footer">
 <button class="close-btn" onclick="closeGroom()">닫기</button>
+</div>
 
 </div>
 
@@ -496,7 +509,9 @@ N26, N51, N62, N72
 <p class="acc-number">농협 123-111-222222</p>
 <button class="copy-btn" onclick="copy('123111222222')">계좌 복사</button>
 
+<div class="popup-footer">
 <button class="close-btn" onclick="closeBride()">닫기</button>
+</div>
 
 </div>
 
