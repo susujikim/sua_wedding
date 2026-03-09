@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>이준석 ♥ 김수지 결혼식 초대</title>
+<title>이준석 ♥ 김수지 결혼식</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -13,7 +13,7 @@
 
 body{
 margin:0;
-font-family:'Noto Sans KR', sans-serif;
+font-family:'Noto Sans KR',sans-serif;
 background:#fff;
 color:#222;
 line-height:1.7;
@@ -22,30 +22,18 @@ line-height:1.7;
 /* 메인 */
 
 .hero{
-position:relative;
 height:420px;
 background:url("main.jpg") center/cover;
 display:flex;
 align-items:center;
 justify-content:center;
-color:white;
 text-align:center;
-}
-
-.hero-overlay{
-position:absolute;
-inset:0;
-background:rgba(0,0,0,0.25);
-}
-
-.hero-text{
-position:relative;
-z-index:2;
+color:white;
 }
 
 .hero h1{
 font-size:32px;
-letter-spacing:3px;
+letter-spacing:2px;
 }
 
 /* 섹션 */
@@ -63,18 +51,18 @@ margin-bottom:30px;
 letter-spacing:2px;
 }
 
-/* 초대 문구 */
+/* 초대문구 */
 
 .invite-main{
-font-size:22px;
+font-size:20px;
 font-weight:600;
 line-height:1.6;
 }
 
 .invite-sub{
 margin-top:20px;
-color:#444;
 font-size:15px;
+color:#444;
 }
 
 /* 디데이 */
@@ -82,7 +70,7 @@ font-size:15px;
 .dday{
 font-size:30px;
 font-weight:600;
-margin-bottom:25px;
+margin-bottom:20px;
 }
 
 /* 달력 */
@@ -100,11 +88,11 @@ gap:5px;
 
 .day-name{
 font-size:12px;
-color:#888;
+color:#999;
 }
 
 .day{
-padding:8px 0;
+padding:8px;
 border:1px solid #eee;
 border-radius:4px;
 font-size:13px;
@@ -129,8 +117,8 @@ padding:0 10px;
 width:100%;
 aspect-ratio:1/1;
 object-fit:cover;
-cursor:pointer;
 border-radius:6px;
+cursor:pointer;
 }
 
 /* 지도 */
@@ -140,7 +128,7 @@ width:100%;
 border-radius:8px;
 }
 
-/* 계좌 버튼 */
+/* 축의금 버튼 */
 
 .account-buttons{
 display:flex;
@@ -177,28 +165,47 @@ z-index:999;
 .account-popup{
 background:white;
 padding:30px;
-border-radius:10px;
+border-radius:12px;
 width:85%;
-max-width:400px;
+max-width:380px;
 text-align:center;
 }
 
 .acc-number{
 font-weight:600;
-margin:10px 0;
+margin:8px 0 14px 0;
+}
+
+/* 복사 버튼 디자인 */
+
+.copy-btn{
+display:inline-block;
+padding:10px 18px;
+background:#f5f5f5;
+border:1px solid #ddd;
+border-radius:20px;
+font-size:14px;
+cursor:pointer;
+transition:0.2s;
+}
+
+.copy-btn:hover{
+background:#333;
+color:white;
+border-color:#333;
 }
 
 .close-btn{
-margin-top:20px;
+margin-top:25px;
 background:#eee;
-color:#333;
 border:none;
 padding:10px 20px;
 border-radius:20px;
+cursor:pointer;
 }
 
 .account-popup hr{
-margin:20px 0;
+margin:18px 0;
 border:none;
 border-top:1px solid #eee;
 }
@@ -223,15 +230,6 @@ max-width:90%;
 max-height:80%;
 }
 
-.close{
-position:absolute;
-top:20px;
-right:30px;
-font-size:30px;
-color:white;
-cursor:pointer;
-}
-
 </style>
 
 </head>
@@ -241,16 +239,7 @@ cursor:pointer;
 <!-- 메인 -->
 
 <div class="hero">
-
-<div class="hero-overlay"></div>
-
-<div class="hero-text">
-
-<h1>이준석 ♥ 김수지</h1>
-<p>2026년 8월 1일 토요일 오후 2시</p>
-
-</div>
-
+<h1>이준석 ♥ 김수지<br>2026.08.01</h1>
 </div>
 
 <!-- 초대 문구 -->
@@ -283,6 +272,66 @@ cursor:pointer;
 <div class="section-title">결혼식까지</div>
 
 <div id="dday" class="dday"></div>
+
+</div>
+
+<!-- 달력 -->
+
+<div class="section">
+
+<div class="calendar">
+
+<div class="calendar-grid">
+
+<div class="day-name">일</div>
+<div class="day-name">월</div>
+<div class="day-name">화</div>
+<div class="day-name">수</div>
+<div class="day-name">목</div>
+<div class="day-name">금</div>
+<div class="day-name">토</div>
+
+<div></div><div></div><div></div><div></div><div></div>
+<div class="day wedding-day">1</div>
+<div class="day">2</div>
+
+<div class="day">3</div>
+<div class="day">4</div>
+<div class="day">5</div>
+<div class="day">6</div>
+<div class="day">7</div>
+<div class="day">8</div>
+<div class="day">9</div>
+
+<div class="day">10</div>
+<div class="day">11</div>
+<div class="day">12</div>
+<div class="day">13</div>
+<div class="day">14</div>
+<div class="day">15</div>
+<div class="day">16</div>
+
+<div class="day">17</div>
+<div class="day">18</div>
+<div class="day">19</div>
+<div class="day">20</div>
+<div class="day">21</div>
+<div class="day">22</div>
+<div class="day">23</div>
+
+<div class="day">24</div>
+<div class="day">25</div>
+<div class="day">26</div>
+<div class="day">27</div>
+<div class="day">28</div>
+<div class="day">29</div>
+<div class="day">30</div>
+
+<div class="day">31</div>
+
+</div>
+
+</div>
 
 </div>
 
@@ -344,7 +393,7 @@ TEL 02-335-5400
 
 </div>
 
-<!-- 신랑측 팝업 -->
+<!-- 신랑 팝업 -->
 
 <div class="account-modal" id="groomModal">
 
@@ -354,19 +403,19 @@ TEL 02-335-5400
 
 <p>신랑 이준석</p>
 <p class="acc-number">국민은행 123-456-789012</p>
-<button onclick="copy('123456789012')">계좌 복사</button>
+<button class="copy-btn" onclick="copy('123456789012')">계좌 복사</button>
 
 <hr>
 
 <p>아버지 이○○</p>
 <p class="acc-number">국민은행 111-222-333333</p>
-<button onclick="copy('111222333333')">계좌 복사</button>
+<button class="copy-btn" onclick="copy('111222333333')">계좌 복사</button>
 
 <hr>
 
 <p>어머니 김○○</p>
 <p class="acc-number">신한은행 444-555-666666</p>
-<button onclick="copy('444555666666')">계좌 복사</button>
+<button class="copy-btn" onclick="copy('444555666666')">계좌 복사</button>
 
 <button class="close-btn" onclick="closeGroom()">닫기</button>
 
@@ -374,7 +423,7 @@ TEL 02-335-5400
 
 </div>
 
-<!-- 신부측 팝업 -->
+<!-- 신부 팝업 -->
 
 <div class="account-modal" id="brideModal">
 
@@ -384,19 +433,19 @@ TEL 02-335-5400
 
 <p>신부 김수지</p>
 <p class="acc-number">신한은행 110-123-456789</p>
-<button onclick="copy('110123456789')">계좌 복사</button>
+<button class="copy-btn" onclick="copy('110123456789')">계좌 복사</button>
 
 <hr>
 
 <p>아버지 김○○</p>
 <p class="acc-number">국민은행 777-888-999999</p>
-<button onclick="copy('777888999999')">계좌 복사</button>
+<button class="copy-btn" onclick="copy('777888999999')">계좌 복사</button>
 
 <hr>
 
 <p>어머니 박○○</p>
 <p class="acc-number">농협 123-111-222222</p>
-<button onclick="copy('123111222222')">계좌 복사</button>
+<button class="copy-btn" onclick="copy('123111222222')">계좌 복사</button>
 
 <button class="close-btn" onclick="closeBride()">닫기</button>
 
@@ -407,7 +456,6 @@ TEL 02-335-5400
 <!-- 사진 팝업 -->
 
 <div class="modal" id="modal">
-<span class="close" onclick="closeModal()">×</span>
 <img id="modalImg">
 </div>
 
@@ -420,14 +468,14 @@ const today=new Date();
 const diff=Math.ceil((wedding-today)/(1000*60*60*24));
 document.getElementById("dday").innerText="D-"+diff;
 
-/* 계좌 복사 */
+/* 복사 */
 
 function copy(text){
 navigator.clipboard.writeText(text);
 alert("계좌번호가 복사되었습니다.");
 }
 
-/* 계좌 팝업 */
+/* 팝업 */
 
 function openGroom(){
 document.getElementById("groomModal").style.display="flex";
@@ -457,10 +505,6 @@ modal.classList.add("show");
 modalImg.src=img.src;
 };
 });
-
-function closeModal(){
-modal.classList.remove("show");
-}
 
 modal.onclick=function(){
 modal.classList.remove("show");
