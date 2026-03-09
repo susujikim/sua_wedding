@@ -9,15 +9,14 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;600&display=swap" rel="stylesheet">
 
-
 <link rel="stylesheet" type="text/css" href="https://www.itscard.co.kr/mobile/new_m/mcard/css/lightSlider.css" />
 <link rel="stylesheet" type="text/css" href="https://www.itscard.co.kr/mobile/new_m/mcard/css/style.css?v=0.0.6" />
-<script type="text/javascript" src="https://www.itscard.co.kr/mobile/new_m/mcard/js/jquery-1.12.4.min.js"></script> 
+<script type="text/javascript" src="https://www.itscard.co.kr/mobile/new_m/mcard/js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="https://www.itscard.co.kr/mobile/new_m/mcard/js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="https://www.itscard.co.kr/mobile/new_m/mcard/js/lightSlider.js"></script>
 <script type="text/javascript" src="https://www.itscard.co.kr/mobile/new_m/mcard/js/jquery.rwdImageMaps.min.js"></script>
 <script type="text/javascript" src="https://www.itscard.co.kr/mobile/new_m/mcard/js/common.js"></script>
-	
+
 <style>
 
 body{
@@ -26,6 +25,7 @@ font-family:'Noto Sans KR', sans-serif;
 background:#fff;
 color:#222;
 line-height:1.7;
+word-break:keep-all;
 }
 
 /* 메인 */
@@ -50,26 +50,35 @@ background:rgba(0,0,0,0.25);
 .hero-text{
 position:relative;
 z-index:2;
+padding:0 20px;
 }
 
 .hero h1{
 font-size:32px;
 letter-spacing:3px;
+margin:0 0 12px 0;
 }
 
-/* 섹션 */
+.hero-text p{
+margin:0;
+font-size:16px;
+}
+
+/* 공통 섹션 */
 
 .section{
 padding:60px 20px;
 max-width:800px;
 margin:auto;
 text-align:center;
+box-sizing:border-box;
 }
 
 .section-title{
 font-size:18px;
 margin-bottom:30px;
 letter-spacing:2px;
+color:#222;
 }
 
 .section p{
@@ -89,6 +98,7 @@ line-height:1.6;
 margin-top:20px;
 color:#444;
 font-size:15px;
+line-height:1.9;
 }
 
 /* 디데이 */
@@ -115,11 +125,11 @@ gap:5px;
 .day-name{
 font-size:12px;
 color:#888;
+padding:6px 0;
 }
 
 .day{
 padding:8px 0;
-border:1px solid #eee;
 border-radius:4px;
 font-size:13px;
 }
@@ -145,6 +155,7 @@ aspect-ratio:1/1;
 object-fit:cover;
 cursor:pointer;
 border-radius:6px;
+display:block;
 }
 
 /* 지도 */
@@ -152,24 +163,81 @@ border-radius:6px;
 .map img{
 width:100%;
 border-radius:8px;
+display:block;
+}
+
+.venue-text{
+margin-top:22px;
+font-size:16px;
+line-height:1.9;
+color:#333;
+}
+
+/* 지도 앱 버튼 */
+
+.map-buttons{
+display:flex;
+justify-content:space-between;
+gap:10px;
+margin:25px auto 0;
+max-width:420px;
+flex-wrap:wrap;
+}
+
+.map-btn{
+flex:1 1 calc(25% - 10px);
+min-width:70px;
+text-align:center;
+font-size:12px;
+color:#666;
+text-decoration:none;
+}
+
+.map-btn img{
+width:48px;
+height:48px;
+display:block;
+margin:0 auto 6px;
+border-radius:14px;
 }
 
 /* 교통 안내 */
 
-.location-info{
-text-align:left;
-max-width:420px;
-margin:30px auto 0;
-font-size:14px;
-line-height:1.7;
-color:#444;
+.transport-wrap{
+padding:0 20px 60px;
+max-width:800px;
+margin:0 auto;
+box-sizing:border-box;
 }
 
-.location-info h4{
-margin-top:20px;
-margin-bottom:5px;
-font-size:15px;
+.transport-box{
+background:#fafafa;
+border-radius:10px;
+padding:18px;
+text-align:left;
+font-size:14px;
+line-height:1.8;
+color:#555;
+max-width:420px;
+margin:0 auto;
+box-sizing:border-box;
+}
+
+.transport-box h5{
+font-size:14px;
+margin:14px 0 4px;
 color:#222;
+}
+
+.transport-box h5:first-child{
+margin-top:0;
+}
+
+.transport-box .sub{
+color:#999;
+font-size:12px;
+margin-bottom:10px;
+line-height:1.6;
 }
 
 /* 계좌 버튼 */
@@ -179,6 +247,7 @@ display:flex;
 justify-content:center;
 gap:20px;
 margin-top:20px;
+flex-wrap:wrap;
 }
 
 .account-buttons button{
@@ -191,7 +260,7 @@ font-size:15px;
 cursor:pointer;
 }
 
-/* 팝업 */
+/* 계좌 팝업 */
 
 .account-modal{
 position:fixed;
@@ -204,32 +273,71 @@ display:none;
 align-items:center;
 justify-content:center;
 z-index:999;
+padding:20px;
+box-sizing:border-box;
 }
 
 .account-popup{
 background:white;
-padding:30px;
+padding:26px 22px;
 border-radius:12px;
-width:85%;
+width:100%;
 max-width:380px;
 text-align:center;
-margin:30px;
+box-sizing:border-box;
+max-height:90vh;
+overflow-y:auto;
+}
+
+.account-popup h3{
+font-size:18px;
+margin:0 0 18px 0;
+}
+
+.account-popup p{
+font-size:14px;
+margin:4px 0;
+}
+
+.acc-name{
+font-size:14px;
+font-weight:500;
+color:#333;
 }
 
 .acc-number{
+font-size:15px;
 font-weight:600;
-margin:8px 0 14px 0;
+letter-spacing:0.2px;
+margin:8px 0 12px 0;
+color:#222;
 }
 
-/* 복사 버튼 */
+.contact-buttons{
+display:flex;
+justify-content:center;
+gap:10px;
+margin:8px 0 10px;
+flex-wrap:wrap;
+}
+
+.contact-buttons a{
+font-size:12px;
+padding:6px 12px;
+border-radius:15px;
+background:#f3f3f3;
+text-decoration:none;
+color:#333;
+border:1px solid #ececec;
+}
 
 .copy-btn{
 display:inline-block;
-padding:10px 18px;
+padding:8px 14px;
 background:#f5f5f5;
 border:1px solid #ddd;
 border-radius:20px;
-font-size:14px;
+font-size:13px;
 cursor:pointer;
 transition:0.2s;
 }
@@ -240,29 +348,26 @@ color:white;
 border-color:#333;
 }
 
-/* 닫기 영역 */
+.account-popup hr{
+margin:18px 0;
+border:none;
+border-top:1px solid #eee;
+}
 
 .popup-footer{
-margin-top:25px;
+margin-top:22px;
 padding-top:15px;
 border-top:1px solid #eee;
-text-align:center;
 }
 
 .close-btn{
 background:#333;
 color:white;
 border:none;
-padding:12px 28px;
-border-radius:30px;
+padding:10px 22px;
+border-radius:22px;
 font-size:14px;
 cursor:pointer;
-}
-
-.account-popup hr{
-margin:18px 0;
-border:none;
-border-top:1px solid #eee;
 }
 
 /* 사진 팝업 */
@@ -274,6 +379,9 @@ background:rgba(0,0,0,0.85);
 display:none;
 align-items:center;
 justify-content:center;
+z-index:1000;
+padding:20px;
+box-sizing:border-box;
 }
 
 .modal.show{
@@ -283,52 +391,61 @@ display:flex;
 .modal img{
 max-width:90%;
 max-height:80%;
+border-radius:8px;
+display:block;
 }
 
-/* 지도 앱 버튼 */
+/* 모바일 */
+
+@media (max-width:480px){
+
+.hero{
+height:380px;
+}
+
+.hero h1{
+font-size:28px;
+}
+
+.section{
+padding:50px 16px;
+}
+
+.invite-main{
+font-size:18px;
+}
+
+.invite-sub{
+font-size:14px;
+}
+
+.dday{
+font-size:26px;
+}
 
 .map-buttons{
-display:flex;
-justify-content:space-around;
-margin:25px 0;
+gap:12px 8px;
 }
 
 .map-btn{
-text-align:center;
-font-size:12px;
-color:#666;
+flex:1 1 calc(25% - 8px);
+min-width:64px;
 }
 
 .map-btn img{
-width:48px;
-height:48px;
-display:block;
-margin:0 auto 6px;
+width:44px;
+height:44px;
 }
 
+.account-buttons{
+gap:12px;
+}
 
-/* 교통 안내 박스 */
-
-.transport-box{
-background:#fafafa;
-border-radius:10px;
-padding:18px;
-text-align:left;
+.account-buttons button{
 font-size:14px;
-line-height:1.7;
-color:#555;
+padding:11px 18px;
 }
 
-.transport-box h5{
-font-size:14px;
-margin:12px 0 4px;
-color:#222;
-}
-
-.transport-box .sub{
-color:#999;
-font-size:12px;
-margin-bottom:10px;
 }
 
 </style>
@@ -357,7 +474,6 @@ margin-bottom:10px;
 </div>
 
 <div class="invite-sub">
-
 저희 두 사람이 이제 부부로서<br>
 새로운 출발을 하려 합니다.<br><br>
 
@@ -365,7 +481,6 @@ margin-bottom:10px;
 그 시작을 함께하고자 합니다.<br><br>
 
 부디 오셔서 따뜻한 축복으로 함께해 주세요.
-
 </div>
 
 </div>
@@ -375,7 +490,6 @@ margin-bottom:10px;
 <div class="section">
 
 <div class="section-title">결혼식까지</div>
-
 <div id="dday" class="dday"></div>
 
 </div>
@@ -447,16 +561,15 @@ margin-bottom:10px;
 <div class="section-title">사진</div>
 
 <div class="gallery">
-
-<img src="images/image_1.jpeg">
-<img src="images/image_2.jpeg">
-<img src="images/image_3.jpeg">
-<img src="images/image_4.jpeg">
-<img src="images/image_5.jpeg">
-<img src="images/image_6.jpeg">
-<img src="images/image_7.jpeg">
-<img src="images/image_8.jpeg">
-<img src="images/image_9.jpeg">
+<img src="images/image_1.jpeg" alt="웨딩사진1">
+<img src="images/image_2.jpeg" alt="웨딩사진2">
+<img src="images/image_3.jpeg" alt="웨딩사진3">
+<img src="images/image_4.jpeg" alt="웨딩사진4">
+<img src="images/image_5.jpeg" alt="웨딩사진5">
+<img src="images/image_6.jpeg" alt="웨딩사진6">
+<img src="images/image_7.jpeg" alt="웨딩사진7">
+<img src="images/image_8.jpeg" alt="웨딩사진8">
+<img src="images/image_9.jpeg" alt="웨딩사진9">
 </div>
 
 </div>
@@ -468,53 +581,65 @@ margin-bottom:10px;
 <div class="section-title">오시는 길</div>
 
 <div class="map">
-<img src="map.png">
+<img src="map.png" alt="예식장 지도">
 </div>
 
-<p>
+<div class="venue-text">
 합정 웨딩시그니처<br>
 서울시 마포구 양화로 87 (서교동 378-7)<br>
 TEL 02-335-5400
-</p>
-<!-- 
-<div class="location-info">
+</div>
 
-<h4>지하철</h4>
-2호선 홍대입구역 1번 출구 도보 약 11분<br>
-2호선 · 6호선 합정역 2번 출구 도보 약 4분
+<!-- 지도 앱 버튼 -->
 
-<h4>버스</h4>
-271, 602, 603, 604, 761, 921<br>
-N26, N51, N62, N72
+<div class="map-buttons">
 
-<h4>자가용</h4>
-건물 주차장 이용 가능
+<a class="map-btn" href="https://apis.openapi.sk.com/tmap/app/routes?name=합정웨딩시그니처&lon=126.9142&lat=37.5487" target="_blank" rel="noopener noreferrer">
+<img src="https://img.icons8.com/color/96/map.png" alt="티맵">
+티맵
+</a>
+
+<a class="map-btn" href="https://kakaonavi.kakao.com/launch?name=합정웨딩시그니처&x=126.9142&y=37.5487" target="_blank" rel="noopener noreferrer">
+<img src="https://img.icons8.com/color/96/navigation.png" alt="카카오내비">
+카카오내비
+</a>
+
+<a class="map-btn" href="https://map.naver.com/v5/search/%ED%95%A9%EC%A0%95%20%EC%9B%A8%EB%94%A9%EC%8B%9C%EA%B7%B8%EB%8B%88%EC%B2%98" target="_blank" rel="noopener noreferrer">
+<img src="https://img.icons8.com/color/96/naver.png" alt="네이버지도">
+네이버지도
+</a>
+
+<a class="map-btn" href="https://map.kakao.com/link/map/%ED%95%A9%EC%A0%95%EC%9B%A8%EB%94%A9%EC%8B%9C%EA%B7%B8%EB%8B%88%EC%B2%98,37.5487,126.9142" target="_blank" rel="noopener noreferrer">
+<img src="https://img.icons8.com/color/96/kakaotalk.png" alt="카카오맵">
+카카오맵
+</a>
 
 </div>
 
--->
 </div>
 
 <!-- 교통 안내 -->
 
+<div class="transport-wrap">
+
 <div class="transport-box">
 
 <h5>지하철안내</h5>
-<div class="sub">7호선 상동역 8번출구 도보 10분 거리</div>
+<div class="sub">2호선 · 6호선 합정역 2번 출구 도보 약 4분<br>2호선 홍대입구역 1번 출구 도보 약 11분</div>
 
 <h5>버스안내</h5>
-간선버스 : 47, 240, 463<br>
-지선버스 : 4211<br>
-마을버스 : 강서08
+271, 602, 603, 604, 761, 921<br>
+N26, N51, N62, N72
 
 <h5>주차안내</h5>
-웨딩홀 전방 우측 150m 사이 공영주차장 이용
+건물 주차장 이용 가능
 
 <h5>전세버스안내</h5>
-예식당일 오전 11시 / 동네카 전석의 1번출구 앞 출발
+추후 안내 예정
 
 </div>
 
+</div>
 
 <!-- 축의금 -->
 
@@ -523,10 +648,8 @@ N26, N51, N62, N72
 <div class="section-title">마음 전하실 곳</div>
 
 <div class="account-buttons">
-
-<button onclick="openGroom()">신랑측 계좌</button>
-<button onclick="openBride()">신부측 계좌</button>
-
+<button type="button" onclick="openGroom()">신랑측 계좌</button>
+<button type="button" onclick="openBride()">신부측 계좌</button>
 </div>
 
 </div>
@@ -539,24 +662,36 @@ N26, N51, N62, N72
 
 <h3>신랑측 계좌</h3>
 
-<p>신랑 이준석</p>
+<p class="acc-name">신랑 이준석</p>
+<div class="contact-buttons">
+<a href="tel:01000000000">전화하기</a>
+<a href="sms:01000000000">문자하기</a>
+</div>
 <p class="acc-number">국민은행 123-456-789012</p>
-<button class="copy-btn" onclick="copy('123456789012')">계좌 복사</button>
+<button class="copy-btn" type="button" onclick="copy('123456789012')">계좌 복사</button>
 
 <hr>
 
-<p>아버지 이○○</p>
+<p class="acc-name">아버지 이○○</p>
+<div class="contact-buttons">
+<a href="tel:01000000000">전화하기</a>
+<a href="sms:01000000000">문자하기</a>
+</div>
 <p class="acc-number">국민은행 111-222-333333</p>
-<button class="copy-btn" onclick="copy('111222333333')">계좌 복사</button>
+<button class="copy-btn" type="button" onclick="copy('111222333333')">계좌 복사</button>
 
 <hr>
 
-<p>어머니 김○○</p>
+<p class="acc-name">어머니 김○○</p>
+<div class="contact-buttons">
+<a href="tel:01000000000">전화하기</a>
+<a href="sms:01000000000">문자하기</a>
+</div>
 <p class="acc-number">신한은행 444-555-666666</p>
-<button class="copy-btn" onclick="copy('444555666666')">계좌 복사</button>
+<button class="copy-btn" type="button" onclick="copy('444555666666')">계좌 복사</button>
 
 <div class="popup-footer">
-<button class="close-btn" onclick="closeGroom()">닫기</button>
+<button class="close-btn" type="button" onclick="closeGroom()">닫기</button>
 </div>
 
 </div>
@@ -571,24 +706,36 @@ N26, N51, N62, N72
 
 <h3>신부측 계좌</h3>
 
-<p>신부 김수지</p>
+<p class="acc-name">신부 김수지</p>
+<div class="contact-buttons">
+<a href="tel:01000000000">전화하기</a>
+<a href="sms:01000000000">문자하기</a>
+</div>
 <p class="acc-number">신한은행 110-123-456789</p>
-<button class="copy-btn" onclick="copy('110123456789')">계좌 복사</button>
+<button class="copy-btn" type="button" onclick="copy('110123456789')">계좌 복사</button>
 
 <hr>
 
-<p>아버지 김○○</p>
+<p class="acc-name">아버지 김○○</p>
+<div class="contact-buttons">
+<a href="tel:01000000000">전화하기</a>
+<a href="sms:01000000000">문자하기</a>
+</div>
 <p class="acc-number">국민은행 777-888-999999</p>
-<button class="copy-btn" onclick="copy('777888999999')">계좌 복사</button>
+<button class="copy-btn" type="button" onclick="copy('777888999999')">계좌 복사</button>
 
 <hr>
 
-<p>어머니 박○○</p>
+<p class="acc-name">어머니 박○○</p>
+<div class="contact-buttons">
+<a href="tel:01000000000">전화하기</a>
+<a href="sms:01000000000">문자하기</a>
+</div>
 <p class="acc-number">농협 123-111-222222</p>
-<button class="copy-btn" onclick="copy('123111222222')">계좌 복사</button>
+<button class="copy-btn" type="button" onclick="copy('123111222222')">계좌 복사</button>
 
 <div class="popup-footer">
-<button class="close-btn" onclick="closeBride()">닫기</button>
+<button class="close-btn" type="button" onclick="closeBride()">닫기</button>
 </div>
 
 </div>
@@ -598,65 +745,71 @@ N26, N51, N62, N72
 <!-- 사진 팝업 -->
 
 <div class="modal" id="modal">
-<img id="modalImg">
+<img id="modalImg" alt="확대 이미지">
 </div>
 
-<!-- 테스트 -->
-
-<!-- 테스트 -->
-  
 <script>
 
 /* 디데이 */
-
-const wedding=new Date("2026-08-01T14:00:00");
-const today=new Date();
-const diff=Math.ceil((wedding-today)/(1000*60*60*24));
-document.getElementById("dday").innerText="D-"+diff;
+const wedding = new Date("2026-08-01T14:00:00");
+const today = new Date();
+const diff = Math.ceil((wedding - today) / (1000 * 60 * 60 * 24));
+document.getElementById("dday").innerText = "D-" + diff;
 
 /* 계좌 복사 */
-
 function copy(text){
-navigator.clipboard.writeText(text);
+navigator.clipboard.writeText(text).then(function(){
 alert("계좌번호가 복사되었습니다.");
+}).catch(function(){
+alert("복사에 실패했습니다. 다시 시도해주세요.");
+});
 }
 
 /* 팝업 */
-
 function openGroom(){
-document.getElementById("groomModal").style.display="flex";
+document.getElementById("groomModal").style.display = "flex";
 }
 
 function closeGroom(){
-document.getElementById("groomModal").style.display="none";
+document.getElementById("groomModal").style.display = "none";
 }
 
 function openBride(){
-document.getElementById("brideModal").style.display="flex";
+document.getElementById("brideModal").style.display = "flex";
 }
 
 function closeBride(){
-document.getElementById("brideModal").style.display="none";
+document.getElementById("brideModal").style.display = "none";
 }
 
+/* 바깥 영역 클릭 시 팝업 닫기 */
+document.getElementById("groomModal").addEventListener("click", function(e){
+if(e.target === this){
+closeGroom();
+}
+});
+
+document.getElementById("brideModal").addEventListener("click", function(e){
+if(e.target === this){
+closeBride();
+}
+});
+
 /* 사진 팝업 */
+const images = document.querySelectorAll(".gallery img");
+const modal = document.getElementById("modal");
+const modalImg = document.getElementById("modalImg");
 
-const images=document.querySelectorAll(".gallery img");
-const modal=document.getElementById("modal");
-const modalImg=document.getElementById("modalImg");
-
-images.forEach(img=>{
-img.onclick=()=>{
+images.forEach(function(img){
+img.onclick = function(){
 modal.classList.add("show");
-modalImg.src=img.src;
+modalImg.src = img.src;
 };
 });
 
-modal.onclick=function(){
+modal.onclick = function(){
 modal.classList.remove("show");
-}
-
-
+};
 
 </script>
 
