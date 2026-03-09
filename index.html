@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>이준석 ♥ 김수지 결혼식</title>
+<title>이준석 ♥ 김수지 결혼식 초대</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -13,7 +13,7 @@
 
 body{
 margin:0;
-font-family:'Noto Sans KR',sans-serif;
+font-family:'Noto Sans KR', sans-serif;
 background:#fff;
 color:#222;
 line-height:1.7;
@@ -22,18 +22,30 @@ line-height:1.7;
 /* 메인 */
 
 .hero{
+position:relative;
 height:420px;
 background:url("main.jpg") center/cover;
 display:flex;
 align-items:center;
 justify-content:center;
-text-align:center;
 color:white;
+text-align:center;
+}
+
+.hero-overlay{
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.25);
+}
+
+.hero-text{
+position:relative;
+z-index:2;
 }
 
 .hero h1{
 font-size:32px;
-letter-spacing:2px;
+letter-spacing:3px;
 }
 
 /* 섹션 */
@@ -51,7 +63,7 @@ margin-bottom:30px;
 letter-spacing:2px;
 }
 
-/* 초대문구 */
+/* 초대 문구 */
 
 .invite-main{
 font-size:20px;
@@ -61,8 +73,8 @@ line-height:1.6;
 
 .invite-sub{
 margin-top:20px;
-font-size:15px;
 color:#444;
+font-size:15px;
 }
 
 /* 디데이 */
@@ -70,7 +82,7 @@ color:#444;
 .dday{
 font-size:30px;
 font-weight:600;
-margin-bottom:20px;
+margin-bottom:25px;
 }
 
 /* 달력 */
@@ -88,11 +100,11 @@ gap:5px;
 
 .day-name{
 font-size:12px;
-color:#999;
+color:#888;
 }
 
 .day{
-padding:8px;
+padding:8px 0;
 border:1px solid #eee;
 border-radius:4px;
 font-size:13px;
@@ -117,8 +129,8 @@ padding:0 10px;
 width:100%;
 aspect-ratio:1/1;
 object-fit:cover;
-border-radius:6px;
 cursor:pointer;
+border-radius:6px;
 }
 
 /* 지도 */
@@ -128,7 +140,25 @@ width:100%;
 border-radius:8px;
 }
 
-/* 축의금 버튼 */
+/* 교통 안내 */
+
+.location-info{
+text-align:left;
+max-width:420px;
+margin:30px auto 0;
+font-size:14px;
+line-height:1.7;
+color:#444;
+}
+
+.location-info h4{
+margin-top:20px;
+margin-bottom:5px;
+font-size:15px;
+color:#222;
+}
+
+/* 계좌 버튼 */
 
 .account-buttons{
 display:flex;
@@ -239,7 +269,11 @@ max-height:80%;
 <!-- 메인 -->
 
 <div class="hero">
-<h1>이준석 ♥ 김수지<br>2026.08.01</h1>
+<div class="hero-overlay"></div>
+<div class="hero-text">
+<h1>이준석 ♥ 김수지</h1>
+<p>2026년 8월 1일 토요일 오후 2시</p>
+</div>
 </div>
 
 <!-- 초대 문구 -->
@@ -376,6 +410,21 @@ max-height:80%;
 TEL 02-335-5400
 </p>
 
+<div class="location-info">
+
+<h4>지하철</h4>
+2호선 홍대입구역 1번 출구 도보 약 11분<br>
+2호선 · 6호선 합정역 2번 출구 도보 약 4분
+
+<h4>버스</h4>
+271, 602, 603, 604, 761, 921<br>
+N26, N51, N62, N72
+
+<h4>자가용</h4>
+건물 주차장 이용 가능
+
+</div>
+
 </div>
 
 <!-- 축의금 -->
@@ -468,7 +517,7 @@ const today=new Date();
 const diff=Math.ceil((wedding-today)/(1000*60*60*24));
 document.getElementById("dday").innerText="D-"+diff;
 
-/* 복사 */
+/* 계좌 복사 */
 
 function copy(text){
 navigator.clipboard.writeText(text);
