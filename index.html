@@ -9,17 +9,19 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;600&display=swap" rel="stylesheet">
 
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+
 <style>
 
 body{
 margin:0;
 font-family:'Noto Sans KR', sans-serif;
-background:#ffffff;
+background:#fff;
 color:#222;
 line-height:1.7;
 }
 
-/* 상단 */
+/* 메인 */
 
 .hero{
 position:relative;
@@ -28,8 +30,8 @@ background:url("main.jpg") center/cover;
 display:flex;
 align-items:center;
 justify-content:center;
-text-align:center;
 color:white;
+text-align:center;
 }
 
 .hero-overlay{
@@ -46,11 +48,6 @@ z-index:2;
 .hero h1{
 font-size:32px;
 letter-spacing:3px;
-}
-
-.hero p{
-margin-top:10px;
-font-size:15px;
 }
 
 /* 섹션 */
@@ -73,13 +70,13 @@ letter-spacing:2px;
 .invite-main{
 font-size:28px;
 font-weight:600;
-margin-bottom:20px;
 line-height:1.5;
 }
 
 .invite-sub{
-font-size:15px;
+margin-top:20px;
 color:#444;
+font-size:15px;
 }
 
 /* 디데이 */
@@ -93,13 +90,8 @@ margin-bottom:25px;
 /* 달력 */
 
 .calendar{
-max-width:320px;
+max-width:350px;
 margin:auto;
-}
-
-.calendar-title{
-font-weight:600;
-margin-bottom:10px;
 }
 
 .calendar-grid{
@@ -151,10 +143,9 @@ grid-template-columns:repeat(2,1fr);
 
 /* 지도 */
 
-.map iframe{
+.map img{
 width:100%;
-height:320px;
-border:none;
+border-radius:8px;
 }
 
 /* 계좌 */
@@ -164,11 +155,12 @@ background:#f8f8f8;
 padding:20px;
 margin-top:10px;
 border-radius:8px;
+text-align:left;
 }
 
 button{
-margin-top:8px;
-padding:10px 14px;
+margin-top:6px;
+padding:8px 12px;
 background:#333;
 color:white;
 border:none;
@@ -189,7 +181,7 @@ opacity:1;
 transform:translateY(0);
 }
 
-/* 사진 팝업 */
+/* 이미지 팝업 */
 
 .modal{
 position:fixed;
@@ -224,7 +216,7 @@ cursor:pointer;
 
 <body>
 
-<!-- 메인 사진 -->
+<!-- 메인 -->
 
 <div class="hero">
 
@@ -244,10 +236,8 @@ cursor:pointer;
 <div class="section fade">
 
 <div class="invite-main">
-
 연애 종료<br>
 부부 시작
-
 </div>
 
 <div class="invite-sub">
@@ -258,14 +248,13 @@ cursor:pointer;
 소중한 분들을 모시고<br>
 그 시작을 함께하고자 합니다.<br><br>
 
-부디 오셔서 따뜻한 축복으로<br>
-함께해 주세요.
+부디 오셔서 따뜻한 축복으로 함께해 주세요.
 
 </div>
 
 </div>
 
-<!-- 디데이 + 달력 -->
+<!-- 디데이 -->
 
 <div class="section fade">
 
@@ -274,8 +263,6 @@ cursor:pointer;
 <div id="dday" class="dday"></div>
 
 <div class="calendar">
-
-<div class="calendar-title">2026년 8월</div>
 
 <div class="calendar-grid">
 
@@ -287,14 +274,43 @@ cursor:pointer;
 <div class="day-name">금</div>
 <div class="day-name">토</div>
 
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-<div></div>
-
+<div></div><div></div><div></div><div></div><div></div>
 <div class="day wedding-day">1</div>
 <div class="day">2</div>
+
+<div class="day">3</div>
+<div class="day">4</div>
+<div class="day">5</div>
+<div class="day">6</div>
+<div class="day">7</div>
+<div class="day">8</div>
+<div class="day">9</div>
+
+<div class="day">10</div>
+<div class="day">11</div>
+<div class="day">12</div>
+<div class="day">13</div>
+<div class="day">14</div>
+<div class="day">15</div>
+<div class="day">16</div>
+
+<div class="day">17</div>
+<div class="day">18</div>
+<div class="day">19</div>
+<div class="day">20</div>
+<div class="day">21</div>
+<div class="day">22</div>
+<div class="day">23</div>
+
+<div class="day">24</div>
+<div class="day">25</div>
+<div class="day">26</div>
+<div class="day">27</div>
+<div class="day">28</div>
+<div class="day">29</div>
+<div class="day">30</div>
+
+<div class="day">31</div>
 
 </div>
 
@@ -327,7 +343,7 @@ cursor:pointer;
 
 </div>
 
-<!-- 지도 -->
+<!-- 오시는 길 -->
 
 <div class="section fade">
 
@@ -335,12 +351,14 @@ cursor:pointer;
 
 <div class="map">
 
-<iframe src="https://maps.google.com/maps?q=seoul&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+<img src="map.png">
 
 </div>
 
-<p style="margin-top:10px">
-서울시 ○○구 ○○로 00 ○○웨딩홀
+<p>
+웨딩시그니처<br>
+서울시 마포구 양화로 87 (서교동 378-7)<br>
+TEL 02-335-5400
 </p>
 
 </div>
@@ -353,10 +371,23 @@ cursor:pointer;
 
 <div class="account">
 
-<p>신랑 이준석</p>
-<p>국민은행 123-456-789012</p>
+<b>신랑측</b><br><br>
 
-<button onclick="copy('123456789012')">계좌번호 복사</button>
+신랑 이준석<br>
+국민은행 123-456-789012<br>
+<button onclick="copy('123456789012')">계좌 복사</button>
+
+<br><br>
+
+아버지 이○○<br>
+국민은행 111-222-333333<br>
+<button onclick="copy('111222333333')">계좌 복사</button>
+
+<br><br>
+
+어머니 김○○<br>
+신한은행 444-555-666666<br>
+<button onclick="copy('444555666666')">계좌 복사</button>
 
 </div>
 
@@ -364,14 +395,41 @@ cursor:pointer;
 
 <div class="account">
 
-<p>신부 김수지</p>
-<p>신한은행 110-123-456789</p>
+<b>신부측</b><br><br>
 
-<button onclick="copy('110123456789')">계좌번호 복사</button>
+신부 김수지<br>
+신한은행 110-123-456789<br>
+<button onclick="copy('110123456789')">계좌 복사</button>
+
+<br><br>
+
+아버지 김○○<br>
+국민은행 777-888-999999<br>
+<button onclick="copy('777888999999')">계좌 복사</button>
+
+<br><br>
+
+어머니 박○○<br>
+농협 123-111-222222<br>
+<button onclick="copy('123111222222')">계좌 복사</button>
 
 </div>
 
 </div>
+
+<!-- 카카오 공유 -->
+
+<div class="section">
+
+<div class="section-title">청첩장 공유</div>
+
+<button onclick="shareKakao()">
+카카오톡으로 보내기
+</button>
+
+</div>
+
+<!-- 사진 팝업 -->
 
 <div class="modal" id="modal">
 
@@ -383,21 +441,29 @@ cursor:pointer;
 
 <script>
 
-/* 사진 팝업 */
+Kakao.init('카카오자바스크립트키');
 
-const images=document.querySelectorAll(".gallery img");
-const modal=document.getElementById("modal");
-const modalImg=document.getElementById("modalImg");
+/* 카카오 공유 */
 
-images.forEach(img=>{
-img.onclick=()=>{
-modal.classList.add("show");
-modalImg.src=img.src;
-};
+function shareKakao(){
+
+Kakao.Link.sendDefault({
+
+objectType:'feed',
+
+content:{
+title:'이준석 ♥ 김수지 결혼식 초대',
+description:'2026년 8월 1일 토요일 오후 2시',
+imageUrl:'main.jpg',
+link:{
+mobileWebUrl:window.location.href,
+webUrl:window.location.href
+}
+
+}
+
 });
 
-function closeModal(){
-modal.classList.remove("show");
 }
 
 /* 디데이 */
@@ -414,6 +480,23 @@ document.getElementById("dday").innerText="D-"+diff;
 function copy(text){
 navigator.clipboard.writeText(text);
 alert("계좌번호가 복사되었습니다.");
+}
+
+/* 사진 팝업 */
+
+const images=document.querySelectorAll(".gallery img");
+const modal=document.getElementById("modal");
+const modalImg=document.getElementById("modalImg");
+
+images.forEach(img=>{
+img.onclick=()=>{
+modal.classList.add("show");
+modalImg.src=img.src;
+};
+});
+
+function closeModal(){
+modal.classList.remove("show");
 }
 
 /* 스크롤 애니메이션 */
