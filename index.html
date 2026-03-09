@@ -1,189 +1,436 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>김수아 ❤ 조연우 결혼합니다</title>
-  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Nanum Myeongjo', serif;
-      background: linear-gradient(#fffaf8, #fdf6f3);
-      color: #333;
-      text-align: center;
-    }
-    header {
-      background: #f9e4e0;
-      padding: 2rem 1rem;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-    section {
-      padding: 2rem 1rem;
-    }
-    .image-box img {
-      width: 90%;
-      margin: 1rem 0;
-      border-radius: 1rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-    .account-box, .calendar-box, .rsvp-box, .map-box {
-      background: #fff;
-      border-radius: 1rem;
-      padding: 1.5rem;
-      margin: 2rem auto;
-      width: 90%;
-      max-width: 500px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-    }
-    .account-box h3, .calendar-box h3, .rsvp-box h3, .map-box h3 {
-      margin-bottom: 1rem;
-      font-size: 1.2rem;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 0.5rem;
-    }
-    .account-item {
-      margin: 0.5rem 0;
-    }
-    .calendar-box p {
-      font-size: 1.1rem;
-    }
-    .btn {
-      background: #f9e4e0;
-      padding: 0.5rem 1rem;
-      border: none;
-      border-radius: 1rem;
-      margin: 1rem 0.3rem;
-      cursor: pointer;
-    }
-    footer {
-      font-size: 0.8rem;
-      color: #aaa;
-      margin: 3rem 0 1rem;
-    }
-    .falling-petals {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      overflow: hidden;
-    }
-    .petal {
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      background: pink;
-      border-radius: 50%;
-      opacity: 0.6;
-      animation: fall linear infinite;
-    }
-    @keyframes fall {
-      0% { transform: translateY(-100px) rotate(0deg); }
-      100% { transform: translateY(100vh) rotate(360deg); }
-    }
-  </style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>이준석 ♥ 김수지 결혼식 초대</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Noto Sans KR', sans-serif;
+background:#ffffff;
+color:#222;
+line-height:1.7;
+}
+
+/* 상단 */
+
+.hero{
+position:relative;
+height:420px;
+background:url("main.jpg") center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+}
+
+.hero-overlay{
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.25);
+}
+
+.hero-text{
+position:relative;
+z-index:2;
+}
+
+.hero h1{
+font-size:32px;
+letter-spacing:3px;
+}
+
+.hero p{
+margin-top:10px;
+font-size:15px;
+}
+
+/* 섹션 */
+
+.section{
+padding:60px 20px;
+max-width:800px;
+margin:auto;
+text-align:center;
+}
+
+.section-title{
+font-size:18px;
+margin-bottom:30px;
+letter-spacing:2px;
+}
+
+/* 초대 문구 */
+
+.invite-main{
+font-size:28px;
+font-weight:600;
+margin-bottom:20px;
+line-height:1.5;
+}
+
+.invite-sub{
+font-size:15px;
+color:#444;
+}
+
+/* 디데이 */
+
+.dday{
+font-size:30px;
+font-weight:600;
+margin-bottom:25px;
+}
+
+/* 달력 */
+
+.calendar{
+max-width:320px;
+margin:auto;
+}
+
+.calendar-title{
+font-weight:600;
+margin-bottom:10px;
+}
+
+.calendar-grid{
+display:grid;
+grid-template-columns:repeat(7,1fr);
+gap:5px;
+}
+
+.day-name{
+font-size:12px;
+color:#888;
+}
+
+.day{
+padding:8px 0;
+border:1px solid #eee;
+border-radius:4px;
+font-size:13px;
+}
+
+.wedding-day{
+background:#333;
+color:white;
+font-weight:600;
+}
+
+/* 사진 */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:8px;
+}
+
+.gallery img{
+width:100%;
+aspect-ratio:1/1;
+object-fit:cover;
+cursor:pointer;
+}
+
+@media(max-width:768px){
+
+.gallery{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+/* 지도 */
+
+.map iframe{
+width:100%;
+height:320px;
+border:none;
+}
+
+/* 계좌 */
+
+.account{
+background:#f8f8f8;
+padding:20px;
+margin-top:10px;
+border-radius:8px;
+}
+
+button{
+margin-top:8px;
+padding:10px 14px;
+background:#333;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+/* 스크롤 애니메이션 */
+
+.fade{
+opacity:0;
+transform:translateY(30px);
+transition:0.7s;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* 사진 팝업 */
+
+.modal{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.85);
+display:none;
+align-items:center;
+justify-content:center;
+}
+
+.modal.show{
+display:flex;
+}
+
+.modal img{
+max-width:90%;
+max-height:80%;
+}
+
+.close{
+position:absolute;
+top:20px;
+right:30px;
+font-size:30px;
+color:white;
+cursor:pointer;
+}
+
+</style>
+
 </head>
+
 <body>
-  <audio id="bgm" loop>
-    <source src="bgm.mp3" type="audio/mp3" />
-    브라우저가 오디오를 지원하지 않습니다.
-  </audio>
-  <button class="btn" onclick="document.getElementById('bgm').play()">🎵 음악 재생</button>
 
-  <header>
-    <h1>김수아 ❤ 조연우</h1>
-    <p>2026년 2월 21일 토요일 오후 1시</p>
-    <p>더시그너스웨딩 3층</p>
-  </header>
+<!-- 메인 사진 -->
 
-  <section class="image-box">
-    <img src="images/img1.jpeg" alt="커플사진1">
-    <img src="images/img2.jpeg" alt="커플사진2">
-    <img src="images/img3.jpeg" alt="커플사진3">
-  </section>
+<div class="hero">
 
-  <section class="calendar-box">
-    <h3>💍 결혼식 일정</h3>
-    <p>2026년 2월 21일 토요일</p>
-    <p>D-day까지 <strong><span id="dday"></span></strong>일</p>
-    <button class="btn" onclick="addToCalendar()">📅 캘린더에 저장</button>
-  </section>
+<div class="hero-overlay"></div>
 
-  <section class="account-box">
-    <h3>🎁 마음 전하실 곳</h3>
-    <div class="account-item">
-      👰 신부 김수아<br />
-      국민은행 <span id="acc1">123456-78-901234</span>
-      <button class="btn" onclick="copyAccount('acc1')">복사</button>
-    </div>
-    <div class="account-item">
-      🤵 신랑 조연우<br />
-      신한은행 <span id="acc2">987654-32-109876</span>
-      <button class="btn" onclick="copyAccount('acc2')">복사</button>
-    </div>
-  </section>
+<div class="hero-text">
 
-  <section class="map-box">
-    <h3>📍 오시는 길</h3>
-    <p>
-      <a class="btn" href="https://map.kakao.com/link/map/더시그너스웨딩,35.154198,126.882444" target="_blank">카카오맵으로 보기</a>
-      <a class="btn" href="https://naver.me/xDFG32YJ" target="_blank">네이버지도 보기</a>
-    </p>
-  </section>
+<h1>이준석 ♥ 김수지</h1>
+<p>2026년 8월 1일 토요일 오후 2시</p>
 
-  <section class="rsvp-box">
-    <h3>📩 참석 여부 알려주세요</h3>
-    <p>
-      <a class="btn" href="https://forms.gle/yourRSVPFormURL" target="_blank">RSVP 폼 작성하기</a>
-    </p>
-  </section>
+</div>
 
-  <section class="image-box">
-    <img src="images/img4.jpeg" alt="사진4">
-    <img src="images/img5.jpeg" alt="사진5">
-    <img src="images/img6.jpeg" alt="사진6">
-    <img src="images/img7.jpeg" alt="사진7">
-  </section>
+</div>
 
-  <footer>
-    ver 1.1.0
-  </footer>
+<!-- 초대 문구 -->
 
-  <div class="falling-petals" id="petal-container"></div>
+<div class="section fade">
 
-  <script>
-    // D-day 계산
-    const weddingDate = new Date("2026-02-21T13:00:00+09:00");
-    const today = new Date();
-    const diffTime = weddingDate - today;
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    document.getElementById("dday").textContent = diffDays >= 0 ? `D-${diffDays}` : `+${Math.abs(diffDays)}`;
+<div class="invite-main">
 
-    // 캘린더 저장 (ics 파일 다운로드)
-    function addToCalendar() {
-      const icsContent = `BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nSUMMARY:김수아 ❤ 조연우 결혼식\nDTSTART:20260221T040000Z\nDTEND:20260221T060000Z\nLOCATION:더시그너스웨딩 3층\nDESCRIPTION:모바일 청첩장\nEND:VEVENT\nEND:VCALENDAR`;
-      const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
-      const link = document.createElement('a');
-      link.href = URL.createObjectURL(blob);
-      link.download = 'wedding-invite.ics';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    }
+연애 종료<br>
+부부 시작
 
-   
-    // 계좌 복사 기능
-    function copyAccount(id) {
-      const text = document.getElementById(id).textContent;
-      navigator.clipboard.writeText(text).then(() => {
-        alert('계좌번호가 복사되었습니다!');
-      });
-    }
-  </script>
+</div>
+
+<div class="invite-sub">
+
+저희 두 사람이 이제 부부로서<br>
+새로운 출발을 하려 합니다.<br><br>
+
+소중한 분들을 모시고<br>
+그 시작을 함께하고자 합니다.<br><br>
+
+부디 오셔서 따뜻한 축복으로<br>
+함께해 주세요.
+
+</div>
+
+</div>
+
+<!-- 디데이 + 달력 -->
+
+<div class="section fade">
+
+<div class="section-title">결혼식까지</div>
+
+<div id="dday" class="dday"></div>
+
+<div class="calendar">
+
+<div class="calendar-title">2026년 8월</div>
+
+<div class="calendar-grid">
+
+<div class="day-name">일</div>
+<div class="day-name">월</div>
+<div class="day-name">화</div>
+<div class="day-name">수</div>
+<div class="day-name">목</div>
+<div class="day-name">금</div>
+<div class="day-name">토</div>
+
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+
+<div class="day wedding-day">1</div>
+<div class="day">2</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- 사진 -->
+
+<div class="section fade">
+
+<div class="section-title">사진</div>
+
+<div class="gallery">
+
+<img src="img1.jpg">
+<img src="img2.jpg">
+<img src="img3.jpg">
+<img src="img4.jpg">
+<img src="img5.jpg">
+<img src="img6.jpg">
+<img src="img7.jpg">
+<img src="img8.jpg">
+<img src="img9.jpg">
+<img src="img10.jpg">
+<img src="img11.jpg">
+<img src="img12.jpg">
+
+</div>
+
+</div>
+
+<!-- 지도 -->
+
+<div class="section fade">
+
+<div class="section-title">오시는 길</div>
+
+<div class="map">
+
+<iframe src="https://maps.google.com/maps?q=seoul&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+
+</div>
+
+<p style="margin-top:10px">
+서울시 ○○구 ○○로 00 ○○웨딩홀
+</p>
+
+</div>
+
+<!-- 계좌 -->
+
+<div class="section fade">
+
+<div class="section-title">마음 전하실 곳</div>
+
+<div class="account">
+
+<p>신랑 이준석</p>
+<p>국민은행 123-456-789012</p>
+
+<button onclick="copy('123456789012')">계좌번호 복사</button>
+
+</div>
+
+<br>
+
+<div class="account">
+
+<p>신부 김수지</p>
+<p>신한은행 110-123-456789</p>
+
+<button onclick="copy('110123456789')">계좌번호 복사</button>
+
+</div>
+
+</div>
+
+<div class="modal" id="modal">
+
+<span class="close" onclick="closeModal()">×</span>
+
+<img id="modalImg">
+
+</div>
+
+<script>
+
+/* 사진 팝업 */
+
+const images=document.querySelectorAll(".gallery img");
+const modal=document.getElementById("modal");
+const modalImg=document.getElementById("modalImg");
+
+images.forEach(img=>{
+img.onclick=()=>{
+modal.classList.add("show");
+modalImg.src=img.src;
+};
+});
+
+function closeModal(){
+modal.classList.remove("show");
+}
+
+/* 디데이 */
+
+const wedding=new Date("2026-08-01T14:00:00");
+const today=new Date();
+
+const diff=Math.ceil((wedding-today)/(1000*60*60*24));
+
+document.getElementById("dday").innerText="D-"+diff;
+
+/* 계좌 복사 */
+
+function copy(text){
+navigator.clipboard.writeText(text);
+alert("계좌번호가 복사되었습니다.");
+}
+
+/* 스크롤 애니메이션 */
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+});
+
+document.querySelectorAll(".fade").forEach(el=>{
+observer.observe(el);
+});
+
+</script>
+
 </body>
 </html>
