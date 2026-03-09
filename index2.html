@@ -1,666 +1,461 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
 
-<meta charset="euc-kr">
-<title>김수아 ❤ 조연우 모바일 청첩장</title>
-<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,target-densitydpi=medium-dpi" />
-<meta name="format-detection" content="telephone=no" />
-<meta property="og:type" content="website">
-<meta property="og:image" content=""> <!-- Link Image -->
-<meta property="og:title" content="김수아 ❤ 조연우 모바일청첩장"> <!-- Link Title -->
-<meta property="og:description" content=""> <!-- Link Text -->
-<meta property="og:url" content=""> <!-- Link URL -->
-<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/earlyaccess/kopubbatang.css" /> <!-- font-family: 'KoPub Batang'; -->
-<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/earlyaccess/nanummyeongjo.css" /> <!-- font-family: 'Nanum Myeongjo'; -->
-<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/earlyaccess/notosanskr.css" /> <!-- font-family: 'Noto Sans KR'; -->
-<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/earlyaccess/nanumgothic.css" /> <!-- font-family: 'Nanum Gothic'; -->
-<link rel="stylesheet" type="text/css" href="https://www.itscard.co.kr/mobile/new_m/mcard/css/lightSlider.css" />
-<link rel="stylesheet" type="text/css" href="https://www.itscard.co.kr/mobile/new_m/mcard/css/style.css?v=0.0.6" />
-<script type="text/javascript" src="https://www.itscard.co.kr/mobile/new_m/mcard/js/jquery-1.12.4.min.js"></script> 
-<script type="text/javascript" src="https://www.itscard.co.kr/mobile/new_m/mcard/js/jquery-ui.min.js"></script>
-<script type="text/javascript" src="https://www.itscard.co.kr/mobile/new_m/mcard/js/lightSlider.js"></script>
-<script type="text/javascript" src="https://www.itscard.co.kr/mobile/new_m/mcard/js/jquery.rwdImageMaps.min.js"></script>
-<script type="text/javascript" src="https://www.itscard.co.kr/mobile/new_m/mcard/js/common.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>이준석 ♥ 김수지 결혼식</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Noto Sans KR',sans-serif;
+background:#fff;
+color:#222;
+line-height:1.7;
+}
+
+/* 메인 */
+
+.hero{
+height:420px;
+background:url("main.jpg") center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+text-align:center;
+}
+
+.hero h1{
+font-size:32px;
+}
+
+/* 섹션 */
+
+.section{
+padding:70px 20px;
+max-width:800px;
+margin:auto;
+text-align:center;
+}
+
+/* 연애 종료 애니메이션 */
+
+.story-text{
+font-size:34px;
+font-weight:600;
+margin:40px 0;
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.story-text.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* 디데이 */
+
+.dday{
+font-size:30px;
+font-weight:600;
+margin-bottom:25px;
+}
+
+/* 달력 */
+
+.calendar-grid{
+display:grid;
+grid-template-columns:repeat(7,1fr);
+gap:5px;
+max-width:350px;
+margin:auto;
+}
+
+.day{
+padding:8px;
+border:1px solid #eee;
+}
+
+.wedding-day{
+background:#333;
+color:white;
+}
+
+/* 사진 */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:8px;
+}
+
+.gallery img{
+width:100%;
+aspect-ratio:1/1;
+object-fit:cover;
+cursor:pointer;
+}
+
+/* 지도 */
+
+.map img{
+width:100%;
+border-radius:8px;
+}
+
+.nav-buttons{
+display:flex;
+justify-content:center;
+gap:10px;
+margin-top:20px;
+}
+
+.nav-buttons a{
+padding:10px 14px;
+border:1px solid #ddd;
+border-radius:30px;
+text-decoration:none;
+color:#333;
+font-size:14px;
+}
+
+/* 교통 */
+
+.location-info{
+text-align:left;
+max-width:420px;
+margin:auto;
+margin-top:30px;
+}
+
+/* 계좌 버튼 */
+
+.account-open{
+padding:12px 20px;
+background:#333;
+color:white;
+border:none;
+border-radius:30px;
+}
+
+/* 계좌 팝업 */
+
+.account-modal{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.5);
+display:none;
+align-items:center;
+justify-content:center;
+}
+
+.account-popup{
+background:white;
+padding:30px;
+border-radius:10px;
+width:85%;
+max-width:400px;
+text-align:center;
+}
+
+.acc-number{
+font-size:18px;
+font-weight:600;
+}
+
+.close-btn{
+margin-top:20px;
+background:#eee;
+color:#333;
+border:none;
+padding:10px 20px;
+border-radius:20px;
+}
+
+/* 사진 팝업 */
+
+.modal{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.85);
+display:none;
+align-items:center;
+justify-content:center;
+}
+
+.modal img{
+max-width:90%;
+max-height:80%;
+}
+
+</style>
+
 </head>
-<body class="mcard_39">
-	<div class="wrapper">
 
-		<section id="content">
-			<!--player-->
-			<div class="music">
-				<a href="javascript:music_player()">
-					<div>
-						<img id="m_on" src="https://www.itscard.co.kr/mobile/new_m/mcard/images/common/music_01_off.png" tppabs="/mobile/new_m/mcard/images/common/music_01_on.png" />
-						<p style="display:none;" id="m_off">stop</p>
-					</div>
-				</a>
-				<audio id="audio" preload="none" loop="loop" src="/music/bgm1.mp3"></audio>
-				<iframe id="ie_player" src="/script/order/bgm.asp?bgm=/music/bgm1.mp3" width="0" height="0"></iframe>
-			</div>
-			<!--//player-->
+<body>
 
-			<!--// 비주얼 -->
-			<section class="visual-section">
-				<div class="vertical-top">
-					<div class="vertical-item name">
-						<p class="p1">
-							<span class="vs-span">김수아</span>
-							<span class="vs-span">조연우</span>
-						</p>
-					</div>
-					<div class="vertical-item photo">
-						<img src="https://susujikim.github.io/sua_wedding/images/img1.jpeg" alt="">
-					</div>
-					<div class="vertical-item txt">
-						<img src="https://www.itscard.co.kr/mobile/new_m/mcard/images/mcard_39/visual_02.png" alt="">
-					</div>
-				</div>
-			</section>
-			<!-- 비주얼 //-->
+<!-- 메인 -->
 
-			<!--// 인사말 -->
-			<section class="greeting-section">
-				<div class="sec-tit"><img src="https://www.itscard.co.kr/mobile/new_m/mcard/images/mcard_39/sub_title_intro.png" alt="intro"></div>
-				<div class="sec-txt">서로가 마주보며 다져온 사랑을
-이제 함께 한 곳을 바라보며
-걸어갈 수 있는 큰 사랑으로
-키우고자 합니다.
-저희 두 사람이 사랑의 이름으로
-지켜나갈 수 있도록
-앞날을 축복해 주시면
-감사하겠습니다.</div>
-				<div class="info">
-					<div class="ib">
-						<div class="tb">
-							<div class="row">
-								<p class="honju">
-									<span class="gt-span">조연우</span>
-									<span class="gt-span bul"></span>
-									<span class="gt-span">조연우</span>
-								</p>
-								<p class="default">의</p>
-								<p class="gwangye">듬직한 아들</p>
-								<p class="slsb">연우</p>
-							</div>
-							<div class="row">
-								<p class="honju">
-									<span class="gt-span">김원태</span>
-									<span class="gt-span bul"></span>
-									<span class="gt-span">박선희</span>
-								</p>
-								<p class="default">의</p>
-								<p class="gwangye">귀염둥이 둘째</p>
-								<p class="slsb">수아</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- 인사말 //-->
+<div class="hero">
+<h1>이준석 ♥ 김수지<br>2026.08.01</h1>
+</div>
 
-			<!--// 배너 -->
-			<section class="banner-section">
-				<div class="tb">
-					<p class="txt">소 중 한 &nbsp; 당 신 을 &nbsp; 초 대 합 니 다</p>
-				</div>
-			</section>
-			<!-- 배너 //-->
+<!-- 연애 종료 애니메이션 -->
 
-			<!--// 신랑 신부에게 연락하기 -->
-			<section class="slsbTel-section">
-				<div class="ib">
-					<div class="row">
-						<div class="slsb-tit">신랑에게 연락하기</div>
-						<div class="slsb-btn">
-							<a href="javascript:pcAlert();" class="com-btn tel sl">연락하기</a>
-							<a href="javascript:pcAlert();" class="com-btn sms">문자보내기</a>
-						</div>
-					</div>
-					<div class="row">
-						<div class="slsb-tit">신부에게 연락하기</div>
-						<div class="slsb-btn">
-							<a href="javascript:pcAlert();" class="com-btn tel sb">연락하기</a>
-							<a href="javascript:pcAlert();" class="com-btn sms">문자보내기</a>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- 신랑 신부에게 연락하기 //-->
+<div class="section">
 
-			<!--// 혼주에게 연락하기 -->
-			<section class="honjuTel-section">
-				<div class="tit">혼주에게 연락하기</div>
-				<div class="con">
-					<div class="col">
-						<div class="honju-tit sl">신랑 측 혼주</div>
-						<div class="box first">
-							<div class="name"><span>아버지</span> <strong>연우아버지 성함</strong></div>
-							<div class="honju-btn">
-								<a href="javascript:pcAlert();" class="com-btn tel sl">연락하기</a>
-								<a href="javascript:pcAlert();" class="com-btn sms">문자보내기</a>
-							</div>
-						</div>
-						<div class="box">
-							<div class="name"><span>어머니</span> <strong>연우어머니 성함</strong></div>
-							<div class="honju-btn">
-								<a href="javascript:pcAlert();" class="com-btn tel sl">연락하기</a>
-								<a href="javascript:pcAlert();" class="com-btn sms">문자보내기</a>
-							</div>
-						</div>
-					</div>
-					<div class="col">
-						<div class="honju-tit sb">신부 측 혼주</div>
-						<div class="box first">
-							<div class="name"><span>아버지</span> <strong>김원태</strong></div>
-							<div class="honju-btn">
-								<a href="javascript:pcAlert();" class="com-btn tel sb">연락하기</a>
-								<a href="javascript:pcAlert();" class="com-btn sms">문자보내기</a>
-							</div>
-						</div>
-						<div class="box">
-							<div class="name"><span>어머니</span> <strong>박선희</strong></div>
-							<div class="honju-btn">
-								<a href="javascript:pcAlert();" class="com-btn tel sb">연락하기</a>
-								<a href="javascript:pcAlert();" class="com-btn sms">문자보내기</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- 혼주에게 연락하기 //-->
+<div class="story-text">연애 종료</div>
+<div class="story-text">부부 시작</div>
+<div class="story-text">이준석 ♥ 김수지</div>
 
-			<!--// 달력 -->
-			<section class="calendar-section">
-				<div class="calendar-wrap">
-					<div id="calendar"></div>
-					<div class="day-time">
-						<span class="day">sat.</span> <span class="time">pm 1:30</span>
-					</div>
-				</div>
-			</section>
-			<!-- 달력 //-->
+</div>
 
-			<!--// 갤러리 -->
-			<section class="gallery-section type2">
-				<div class="sec-tit"><img src="https://www.itscard.co.kr/mobile/new_m/mcard/images/mcard_39/sub_title_gallery.png" alt="gallery"></div>
-				<div class="contain">
-					<ul class="type2-list">
-						<li onclick="galleryPOP('open', 'type2', 1);">
-							<div class="box" style="background-image:url(https://susujikim.github.io/sua_wedding/images/img2.jpeg?v=0.0.1);"></div>
-						</li>
-						<li onclick="galleryPOP('open', 'type2', 2);">
-							<div class="box" style="background-image:url(https://susujikim.github.io/sua_wedding/images/img3.jpeg?v=0.0.1);"></div>
-						</li>
-						<li onclick="galleryPOP('open', 'type2', 3);">
-							<div class="box" style="background-image:url(https://susujikim.github.io/sua_wedding/images/img4.jpeg?v=0.0.1);"></div>
-						</li>
-						<li onclick="galleryPOP('open', 'type2', 4);">
-							<div class="box" style="background-image:url(https://susujikim.github.io/sua_wedding/images/img5.jpeg?v=0.0.1);"></div>
-						</li>
-						<li onclick="galleryPOP('open', 'type2', 5);">
-							<div class="box" style="background-image:url(https://susujikim.github.io/sua_wedding/images/img6.jpeg?v=0.0.1);"></div>
-						</li>
-						<li onclick="galleryPOP('open', 'type2', 6);">
-							<div class="box" style="background-image:url(https://susujikim.github.io/sua_wedding/images/img7.jpeg?v=0.0.1);"></div>
-						</li>
-						<li onclick="galleryPOP('open', 'type2', 7);">
-							<div class="box" style="background-image:url(https://susujikim.github.io/sua_wedding/images/img2.jpeg?v=0.0.1);"></div>
-						</li>
-						<li onclick="galleryPOP('open', 'type2', 8);">
-							<div class="box" style="background-image:url(https://susujikim.github.io/sua_wedding/images/img4.jpeg?v=0.0.1);"></div>
-						</li>
-						<li onclick="galleryPOP('open', 'type2', 9);">
-							<div class="box" style="background-image:url(https://susujikim.github.io/sua_wedding/images/img5.jpeg?v=0.0.1);"></div>
-						</li>
-						<li onclick="galleryPOP('open', 'type2', 10);">
-							<div class="box" style="background-image:url(https://susujikim.github.io/sua_wedding/images/img6.jpeg?v=0.0.1);"></div>
-						</li>
-						<li onclick="galleryPOP('open', 'type2', 11);">
-							<div class="box" style="background-image:url(https://susujikim.github.io/sua_wedding/images/img2.jpeg?v=0.0.1);"></div>
-						</li>
-						<li onclick="galleryPOP('open', 'type2', 12);">
-							<div class="box" style="background-image:url(https://susujikim.github.io/sua_wedding/images/img7.jpeg?v=0.0.1);"></div>
-						</li>
-					</ul>
-					<p class="ex">이미지를 클릭하시면 확대보기가 가능합니다.</p>
-				</div>
-			</section>
-			<!-- 갤러리 //-->
+<!-- 초대 문구 -->
 
-			<!--// 영상 -->
-			<section class="video-section">
-				<div class="sec-tit"><img src="https://www.itscard.co.kr/mobile/new_m/mcard/images/mcard_39/sub_title_movie.png" alt="movie"></div>
-				<div class="video">
-					<iframe src="https://player.vimeo.com/video/199757327" allowfullscreen="" id="videoarea" data-ready="true"></iframe>
-				</div>
-			</section>
-			<!-- 영상 //-->			
+<div class="section">
 
-			<!--// 텍스트 배너 -->
-			<section class="tbanner-section">
-				<div class="text vertical">
-					<div class="ib">
-						<span class="vt">예쁘게<span class="space">잘</span>살겠습니다</span>
-					</div>
-				</div>
-			</section>
-			<!-- 텍스트 배너 //-->
-			
-			<!--// 오시는길 -->
-			<section class="location-section">
-				<div class="sec-tit"><img src="https://www.itscard.co.kr/mobile/new_m/mcard/images/mcard_39/sub_title_location.png" alt="location"></div>
-				<div class="map-area">
-					<div class="head">
-						<div class="tit">더시그너스웨딩</div>
-						<div class="txt">
-							<p>광주광역시 서구 죽봉대로52 교직원공제회 3층 더 시그너스웨딩</p>
-							<p>Tel. 062-361-3737</p>
-						</div>
-						<a href="javascript:pcAlert();" class="tel">전화걸기</a>
-					</div>
-					<div id="map_canvas" class="map">
-						<div style="font:normal normal 400 12px/normal dotum, sans-serif; width:100%; height:100%; color:#333; position:relative">
-							<div style="height: 100%;">
-								<a href="https://map.kakao.com/?urlX=473456.0&urlY=461649.0&name=광주%20서구%20죽봉대로%2052&map_type=TYPE_MAP&from=roughmap" target="_blank">
-									<img class="map" src="//t1.daumcdn.net/roughmap/imgmap/e4a136bdc0a737dd8c6a0812eebdb5fa1bfe55660e458c000633c51c83b13def" width="100%" height="100%">
-								</a>
-							</div>
-						</div>
-					</div>
-					<div class="link">
-						<ul>
-							<li>
-								<a href="javascript:pcAlert();" class="tmap">티맵</a>
-							</li>
-							<li>
-								<a href="javascript:pcAlert();" class="kakaonavi">카카오내비</a>
-							</li>
-							<li>
-								<a href="javascript:pcAlert();" class="navermap">네이버지도</a>
-							</li>
-							<li>
-								<a href="javascript:pcAlert();" class="kakaomap">카카오맵</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<!--<div class="map-img">
-					<img src="/mobile/new_m/mcard/images/map/map_01.jpg" alt="">
-				</div>-->
-				<div class="info">
-					<div class="contain">
-						<dl>
-							<dt>지하철안내</dt>
-							<dd>7호선 학동역 8번출구 도보 10분 거리</dd>
-						</dl>
-						<dl>
-							<dt>버스안내</dt>
-							<dd>간선버스 : 47, 240, 463</dd>
-							<dd>지선버스 : 4211</dd>
-							<dd>마을버스 : 강남08</dd>
-						</dl>
-						<dl>
-							<dt>주차안내</dt>
-							<dd>웨딩홀 전방 우측 150m 사이 공용주차장 이용</dd>
-						</dl>
-						<dl>
-							<dt>전세버스안내</dt>
-							<dd>예식당일 오전 11시 / 동대입구 전철역 1번출구 앞 출발</dd>
-						</dl>
-					</div>
-				</div>
-			</section>
-			<!-- 오시는길 //-->
+저희 두 사람이 이제 부부로서<br>
+새로운 출발을 하려 합니다.<br><br>
 
-			<!-- 축의금 계좌번호-->
-			<section class="account-section">
-				<div class="sec-tit"><img src="https://www.itscard.co.kr/mobile/new_m/mcard/images/mcard_39/sub_title_account.png" alt="account"></div>
-				<div class="sec-txt">축하의 마음을 담아 축의금을 전달해보세요.</div>
-				<div class="ib">
-					<div class="row">
-						<div class="slsb-tit">신랑측 마음</div>
-						<div class="slsb-btn">
-							<a href="javascript:popOpen('0 1rem','accountCopyG');" class="com-btn acc sl">계좌번호 보기</a>						
-						</div>
-					</div>
-					<div class="row">
-						<div class="slsb-tit">신부측 마음</div>
-						<div class="slsb-btn">
-							<a href="javascript:popOpen('0 1rem','accountCopyB');" class="com-btn acc sb">계좌번호 보기</a>						
-						</div>
-					</div>		
-				</div>
-			</section>
-			<!--// 축의금 계좌번호-->
+소중한 분들을 모시고<br>
+그 시작을 함께하고자 합니다.<br><br>
 
-			<!-- 메시지 //-->
-		</div>
+부디 오셔서 따뜻한 축복으로 함께해 주세요.
 
-		<!--// 푸터 -->
-<footer id="footer">
-    <div class="foot-share">
-        <ul class="foot-share-list">
-            <li>
-                <a href="javascript:pcAlert();" class="kakao">
-                    카카오톡<br> 공유하기
-                </a>
-            </li>
-            <li>
-                <a href="javascript:pcAlert();" class="facebook">
-                    페이스북<br> 공유하기
-                </a>
-            </li>
-        </ul>
-    </div>
-	<div class="foot-logo">
-        main in kimsuji >_<
-    </div>
-</footer>
-<!-- 푸터 //-->
-	</div>
+</div>
 
-	<div class="gallery-pop-wrap">
-		<div class="pop-header">
-			<div class="tit">갤러리</div>
-		</div>
-		<div class="pop-body">
-			<ul id="pop-gallery" class="gallery list-unstyled cS-hidden roll_type01">
-				<li data-thumb="https://www.itscard.co.kr/mobile/new_m/mcard/images/common/gallery_sample_01.jpg?v=0.0.1">
-					<div class="box">
-						<div class="pos">
-							<div class="cen">
-								<img src="https://www.itscard.co.kr/mobile/new_m/mcard/images/common/gallery_sample_01.jpg?v=0.0.1" />
-							</div>
-						</div>
-					</div>
-				</li>
-				<li data-thumb="https://www.itscard.co.kr/mobile/new_m/mcard/images/common/gallery_sample_02.jpg?v=0.0.1">
-					<div class="box">
-						<div class="pos">
-							<div class="cen">
-								<img src="https://www.itscard.co.kr/mobile/new_m/mcard/images/common/gallery_sample_02.jpg?v=0.0.1" />
-							</div>
-						</div>
-					</div>
-				</li>
-				<li data-thumb="/mobile/new_m/mcard/images/common/gallery_sample_03.jpg?v=0.0.1">
-					<div class="box">
-						<div class="pos">
-							<div class="cen">
-								<img src="/mobile/new_m/mcard/images/common/gallery_sample_03.jpg?v=0.0.1" />
-							</div>
-						</div>
-					</div>
-				</li>
-				<li data-thumb="https://www.itscard.co.kr/mobile/new_m/mcard/images/common/gallery_sample_04.jpg?v=0.0.1">
-					<div class="box">
-						<div class="pos">
-							<div class="cen">
-								<img src="https://www.itscard.co.kr/mobile/new_m/mcard/images/common/gallery_sample_04.jpg?v=0.0.1" />
-							</div>
-						</div>
-					</div>
-				</li>
-				<li data-thumb="https://www.itscard.co.kr/mobile/new_m/mcard/images/common/gallery_sample_05.jpg?v=0.0.1">
-					<div class="box">
-						<div class="pos">
-							<div class="cen">
-								<img src="https://www.itscard.co.kr/mobile/new_m/mcard/images/common/gallery_sample_05.jpg?v=0.0.1" />
-							</div>
-						</div>
-					</div>
-				</li>
-				<li data-thumb="https://www.itscard.co.kr/mobile/new_m/mcard/images/common/gallery_sample_06.jpg?v=0.0.1">
-					<div class="box">
-						<div class="pos">
-							<div class="cen">
-								<img src="https://www.itscard.co.kr/mobile/new_m/mcard/images/common/gallery_sample_06.jpg?v=0.0.1" />
-							</div>
-						</div>
-					</div>
-				</li>
-				<li data-thumb="https://www.itscard.co.kr/mobile/new_m/mcard/images/common/gallery_sample_07.jpg?v=0.0.1">
-					<div class="box">
-						<div class="pos">
-							<div class="cen">
-								<img src="https://www.itscard.co.kr/mobile/new_m/mcard/images/common/gallery_sample_07.jpg?v=0.0.1" />
-							</div>
-						</div>
-					</div>
-				</li>
-				<li data-thumb="https://www.itscard.co.kr/mobile/new_m/mcard/images/common/gallery_sample_08.jpg?v=0.0.1">
-					<div class="box">
-						<div class="pos">
-							<div class="cen">
-								<img src="https://www.itscard.co.kr/mobile/new_m/mcard/images/common/gallery_sample_08.jpg?v=0.0.1" />
-							</div>
-						</div>
-					</div>
-				</li>
-				<li data-thumb="/mobile/new_m/mcard/images/common/gallery_sample_09.jpg?v=0.0.1">
-					<div class="box">
-						<div class="pos">
-							<div class="cen">
-								<img src="/mobile/new_m/mcard/images/common/gallery_sample_09.jpg?v=0.0.1" />
-							</div>
-						</div>
-					</div>
-				</li>
-				<li data-thumb="https://www.itscard.co.kr/mobile/new_m/mcard/images/common/gallery_sample_10.jpg?v=0.0.1">
-					<div class="box">
-						<div class="pos">
-							<div class="cen">
-								<img src="https://www.itscard.co.kr/mobile/new_m/mcard/images/common/gallery_sample_10.jpg?v=0.0.1" />
-							</div>
-						</div>
-					</div>
-				</li>
-				<li data-thumb="https://www.itscard.co.kr/mobile/new_m/mcard/images/common/gallery_sample_11.jpg?v=0.0.1">
-					<div class="box">
-						<div class="pos">
-							<div class="cen">
-								<img src="https://www.itscard.co.kr/mobile/new_m/mcard/images/common/gallery_sample_11.jpg?v=0.0.1" />
-							</div>
-						</div>
-					</div>
-				</li>
-				<li data-thumb="https://www.itscard.co.kr/mobile/new_m/mcard/images/common/gallery_sample_12.jpg?v=0.0.1">
-					<div class="box">
-						<div class="pos">
-							<div class="cen">
-								<img src="https://www.itscard.co.kr/mobile/new_m/mcard/images/common/gallery_sample_12.jpg?v=0.0.1" />
-							</div>
-						</div>
-					</div>
-				</li>
-			</ul>
-		</div>
-		<button href="javascript:pcAlert();" class="close-btn" onclick="galleryPOP('close', 'type2')">닫기</button>
-	</div>
+<!-- 디데이 -->
 
-	<div class="pop-wrap accountCopy" id="accountCopyG">
-		<div class="pop-inner">
-			<div class="pop-head">신랑측 계좌번호</div>
-			<div class="pop-body">
-				<div class="form">
-					<form action="">
-						<div class="group col-2 first">
-							<div>
-								국민은행
-							</div>
-							<div>
-								<span>예금주 : </span> 조연우1
-							</div>
-						</div>
-						<div class="group">
-							<div>
-								<input name="GBankNum1" id="GBankNum1" class="input" readonly value="000-123-456789"><button type="button" class="btn" onclick="jsCopyLink('000-123-456789', 'accountCopyG')">복사</button>
-							</div>
-						</div>			
-						<div class="group col-2">
-							<div>
-								국민은행
-							</div>
-							<div>
-								<span>예금주 : </span> 조연우2
-							</div>
-						</div>
-						<div class="group">
-							<div>
-								<input name="GBankNum2" id="GBankNum2" class="input" readonly value="000-123-456789"><button type="button" class="btn">복사</button>
-							</div>
-						</div>			
-					</form>
-				</div>
-			</div>
-			<button href="javascript:void(0);" class="close-btn" onclick="popClose('accountCopyG')">닫기</button>
-		</div>
-	</div>
+<div class="section">
 
-	<div class="pop-wrap accountCopy" id="accountCopyB">
-		<div class="pop-inner">
-			<div class="pop-head">신부측 계좌번호</div>
-			<div class="pop-body">
-				<div class="form">
-					<form action="">
-						<div class="group col-2 first">
-							<div>
-								국민은행
-							</div>
-							<div>
-								<span>예금주 : </span> 김수아1
-							</div>
-						</div>
-						<div class="group">
-							<div>
-								<input name="BBankNum1" id="BBankNum1" class="input" readonly value="000-123-456789"><button type="button" class="btn">복사</button>
-							</div>
-						</div>			
-						<div class="group col-2">
-							<div>
-								국민은행
-							</div>
-							<div>
-								<span>예금주 : </span> 김수아2
-							</div>
-						</div>
-						<div class="group">
-							<div>
-								<input name="BBankNum2" id="BBankNum2" class="input" readonly value="000-123-456789"><button type="button" class="btn">복사</button>
-							</div>
-						</div>			
-					</form>
-				</div>
-			</div>
-			<button href="javascript:void(0);" class="close-btn" onclick="popClose('accountCopyB')">닫기</button>
-		</div>
-	</div>
+<div id="dday" class="dday"></div>
 
-	<div class="pop-wrap copyComplete" id="copyComplete">
-		<div class="pop-inner">			
-			<div class="pop-body">
-				<div class="form">
-				<form action="">
-					<div class="con">
-						<div class="group">
-							<div>
-								<div class="tit">계좌번호가 복사되었습니다.</div>
-								<div class="bkinfo">
-									<span>국민은행 000-123-456789</span><br><span>예금주 이석훈</span>
-								</div>								
-							</div>
-						</div>
-					</div>
-					<div class="buttons">	
-						<a href="javascript:void(0);" class="btn" onclick="popClose('copyComplete')">확인</a>						
-					</div>
-				</form>
-				</div>
-			</div>			
-		</div>
-	</div>
+</div>
 
-	<div class="bg-full-wrap" id="openRsvpCon">
-		<div class="pop-full-wrap copyComplete openRsvpcon">
-			<div class="pop-inner">			
-				<div class="pop-body">
-					
-				</div>	
-				
-			</div>			
-		</div>
-	</div>
+<!-- 달력 -->
 
-	<script>
-		function music_player(){   
-			if ($('#m_off').text()=='stop'){
-				bgmStart('/music/bgm1.mp3');
-				$('#m_off').text('start');
-				document.getElementById('m_on').src="https://www.itscard.co.kr/mobile/new_m/mcard/images/common/music_01_on.png" 
-			}else{
-				bgmStop();
-				$('#m_off').text('stop')
-				document.getElementById('m_on').src="https://www.itscard.co.kr/mobile/new_m/mcard/images/common/music_01_off.png" 
-			}
-		}
+<div class="section">
 
-		function bgmStart(link){
-			if ( window.HTMLAudioElement ) {			
-				audio = $('audio');		
-				audio[0].src = link;			
-				audio[0].load();
-				audio[0].play();
-				//alert("audio");
-			}else{							
-				//ie_player.setBGM(link);
-				//alert(ie_player.src);
-				setTimeout("ie_player.bgmPlay()", 100);	
-				//alert("ifrm");
-			}
-		}
+<div class="calendar-grid">
 
-		function bgmStop(){
-			if ( window.HTMLAudioElement ) {
-				audio = $('audio');			
-				audio[0].pause();		
-			}else{
-				ie_player.bgmStop();			
-			}
-		}
+<div></div><div></div><div></div><div></div><div></div>
+<div class="day wedding-day">1</div>
+<div class="day">2</div>
 
-		// BGM
-		//music_player();
+<div class="day">3</div>
+<div class="day">4</div>
+<div class="day">5</div>
+<div class="day">6</div>
+<div class="day">7</div>
+<div class="day">8</div>
+<div class="day">9</div>
 
-		// 팝업갤러리
-		popGallery();
+<div class="day">10</div>
+<div class="day">11</div>
+<div class="day">12</div>
+<div class="day">13</div>
+<div class="day">14</div>
+<div class="day">15</div>
+<div class="day">16</div>
 
-		// 달력
-        dataPicker('2026-02-21');
+<div class="day">17</div>
+<div class="day">18</div>
+<div class="day">19</div>
+<div class="day">20</div>
+<div class="day">21</div>
+<div class="day">22</div>
+<div class="day">23</div>
 
-		// 다음 지도
-		// daumMap(37.546303, 127.048160);
+<div class="day">24</div>
+<div class="day">25</div>
+<div class="day">26</div>
+<div class="day">27</div>
+<div class="day">28</div>
+<div class="day">29</div>
+<div class="day">30</div>
 
-		function jsCopyLink(copyText, id) {            
-			var tmpTextarea = document.createElement('textarea');
-			tmpTextarea.value = copyText;
-		 
-			document.body.appendChild(tmpTextarea);
-			tmpTextarea.select();
-			tmpTextarea.setSelectionRange(0, 9999);  // 셀렉트 범위 설정
-		 
-			document.execCommand('copy');
-			document.body.removeChild(tmpTextarea);
-			popClose(id);
-			popOpen('0 1rem','copyComplete');			
-			//alert("URL 복사가 완료되었습니다."); 					  
-		}
+<div class="day">31</div>
 
-		$(document).on("ready", function(){
-			
-		});
-	</script>
+</div>
+
+</div>
+
+<!-- 사진 -->
+
+<div class="section">
+
+<div class="gallery">
+
+<img src="img1.jpg">
+<img src="img2.jpg">
+<img src="img3.jpg">
+<img src="img4.jpg">
+<img src="img5.jpg">
+<img src="img6.jpg">
+<img src="img7.jpg">
+<img src="img8.jpg">
+<img src="img9.jpg">
+<img src="img10.jpg">
+<img src="img11.jpg">
+<img src="img12.jpg">
+
+</div>
+
+</div>
+
+<!-- 지도 -->
+
+<div class="section">
+
+<h3>웨딩시그니처</h3>
+
+<p>
+서울시 마포구 양화로 87 (서교동 378-7)<br>
+02-335-5400
+</p>
+
+<div class="map">
+<img src="map.png">
+</div>
+
+<div class="nav-buttons">
+
+<a href="#">네이버지도</a>
+<a href="#">카카오맵</a>
+<a href="#">티맵</a>
+
+</div>
+
+<div class="location-info">
+
+<b>지하철</b><br>
+홍대입구역 / 합정역 이용
+
+<br><br>
+
+<b>버스</b><br>
+271, 602, 603, 604, 761, 921
+
+</div>
+
+</div>
+
+<!-- 계좌 -->
+
+<div class="section">
+
+<button class="account-open" onclick="openAccount()">
+마음 전하실 곳
+</button>
+
+</div>
+
+<!-- 계좌 팝업 -->
+
+<div class="account-modal" id="accountModal">
+
+<div class="account-popup">
+
+<h3>신랑측 계좌</h3>
+
+<p>국민은행 (예금주 : 이준석)</p>
+<p class="acc-number">123456789012</p>
+
+<button onclick="copyAccount('123456789012')">
+계좌번호 복사
+</button>
+
+<hr>
+
+<h3>신부측 계좌</h3>
+
+<p>신한은행 (예금주 : 김수지)</p>
+<p class="acc-number">110123456789</p>
+
+<button onclick="copyAccount('110123456789')">
+계좌번호 복사
+</button>
+
+<br><br>
+
+<button class="close-btn" onclick="closeAccount()">
+닫기
+</button>
+
+</div>
+
+</div>
+
+<!-- 사진 팝업 -->
+
+<div class="modal" id="modal">
+<img id="modalImg">
+</div>
+
+<script>
+
+/* 디데이 */
+
+const wedding=new Date("2026-08-01T14:00:00");
+const today=new Date();
+
+const diff=Math.ceil((wedding-today)/(1000*60*60*24));
+
+document.getElementById("dday").innerText="D-"+diff;
+
+/* 계좌 팝업 */
+
+function openAccount(){
+document.getElementById("accountModal").style.display="flex";
+}
+
+function closeAccount(){
+document.getElementById("accountModal").style.display="none";
+}
+
+function copyAccount(num){
+navigator.clipboard.writeText(num);
+alert("계좌번호가 복사되었습니다.");
+}
+
+/* 사진 팝업 */
+
+const images=document.querySelectorAll(".gallery img");
+const modal=document.getElementById("modal");
+const modalImg=document.getElementById("modalImg");
+
+images.forEach(img=>{
+img.onclick=()=>{
+modal.style.display="flex";
+modalImg.src=img.src;
+};
+});
+
+/* 애니메이션 */
+
+const story=document.querySelectorAll(".story-text");
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+});
+
+story.forEach(el=>observer.observe(el));
+
+</script>
 
 </body>
 </html>
