@@ -487,14 +487,8 @@
 						<div class="group">
 							<div>
 								<input name="GBankNum1" id="GBankNum1" class="input" readonly value="110-356-686630">
-								<button type="button" class="btn" onclick="jsCopyLink('000-123-456789', 'accountCopyG')">복사</button>
 							</div>
-						</div>			
-						<div class="group">
-							<div>
-								<input name="GBankNum2" id="GBankNum2" class="input" readonly value="110-356-686630"><button type="button" class="btn">복사</button>
-							</div>
-						</div>			
+						</div>		
 					</form>
 				</div>
 			</div>
@@ -520,25 +514,10 @@
                     <!-- 계좌 1 -->
                     <div class="group">
                         <div>
-                            <input name="BBankNum1" id="BBankNum1" class="input" readonly value="000-123-456789">
-                            <button type="button" class="btn"
-                                onclick="jsCopyLink(document.getElementById('BBankNum1').value, 'accountCopyB')">
-                                복사
-                            </button>
+                            <input name="BBankNum1" id="BBankNum1" class="input" readonly value="110-456-984524">
+                            
                         </div>
                     </div>
-
-                    <!-- 계좌 2 -->
-                    <div class="group">
-                        <div>
-                            <input name="BBankNum2" id="BBankNum2" class="input" readonly value="000-123-456789">
-                            <button type="button" class="btn"
-                                onclick="jsCopyLink(document.getElementById('BBankNum2').value, 'accountCopyB')">
-                                복사
-                            </button>
-                        </div>
-                    </div>
-
                 </form>
             </div>
         </div>
@@ -546,29 +525,7 @@
     </div>
 </div>
 
-	<div class="pop-wrap copyComplete" id="copyComplete">
-		<div class="pop-inner">			
-			<div class="pop-body">
-				<div class="form">
-				<form action="">
-					<div class="con">
-						<div class="group">
-							<div>
-								<div class="tit">계좌번호가 복사되었습니다.</div>
-								<div class="bkinfo">
-									<span>국민은행 000-123-456789</span><br><span>예금주 이석훈</span>
-								</div>								
-							</div>
-						</div>
-					</div>
-					<div class="buttons">	
-						<a href="javascript:void(0);" class="btn" onclick="popClose('copyComplete')">확인</a>						
-					</div>
-				</form>
-				</div>
-			</div>			
-		</div>
-	</div>
+	
 
 	<div class="bg-full-wrap" id="openRsvpCon">
 		<div class="pop-full-wrap copyComplete openRsvpcon">
